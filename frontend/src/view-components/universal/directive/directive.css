@@ -1,0 +1,20 @@
+.directive {
+  margin-top: 0.5em;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.directive-header {
+  background-color: #e7e7e7;
+  padding: 4px 10px;
+  color: #ffffff;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.directive-enters {
+  border-radius: 0px 0px 8px 8px;
+  flex: 1;
+  background-color: #000000;
+}

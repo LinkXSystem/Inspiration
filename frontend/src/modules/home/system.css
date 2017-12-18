@@ -1,0 +1,36 @@
+* {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #272727;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+}
+
+div[class='row'] + div[class='row'] {
+  margin-top: 0.5em;
+}
+
+div[class*='col-'] {
+  margin-top: 0.5em;
+}

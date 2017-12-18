@@ -1,0 +1,63 @@
+.book {
+  border: 1px solid #eeeeee;
+  height: 182px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0.25em 0.25em;
+  justify-content: flex-start;
+  background-image: linear-gradient(
+    to top right,
+    #a8d8b9,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #877f6c
+  );
+}
+
+.book > img {
+  border-radius: 4px;
+  width: 115px;
+  height: 172px;
+}
+
+.book > img + div {
+  margin-left: 4px;
+}
+
+.content {
+  height: 182px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content > .line {
+  white-space: nowrap;
+}
+
+.content > .typo {
+  line-height: 1em;
+  height: 3em;
+  overflow: hidden;
+}
+
+.sign {
+  font-style: normal;
+  background-color: #000000;
+  border-radius: 4px;
+  padding: 1px 4px;
+  color: #ffffff;
+  font-size: 0.75em;
+}
+
+i + i {
+  margin-left: 0.2em;
+}

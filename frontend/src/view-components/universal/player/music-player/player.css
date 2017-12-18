@@ -1,0 +1,54 @@
+.audio {
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 4px 4px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.song {
+  margin-left: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.song > h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song > span {
+  margin-right: 5px;
+}
+
+.controls {
+  font: normal;
+  width: 40px;
+  text-align: center;
+}
+
+.progress {
+  margin-bottom: 0px;
+  flex: 1;
+  height: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #272727;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
