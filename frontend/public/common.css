@@ -1,0 +1,12 @@
+.footer > .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media (max-width: 375px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

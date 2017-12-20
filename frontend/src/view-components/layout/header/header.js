@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTyps from 'prop-types';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
+import '../../public/fonts/fonts.css';
+
 import './header.css';
 
 class Header extends Component {
@@ -36,8 +38,8 @@ class Header extends Component {
           {/* 路由 */}
           {this.router()}
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">
-              用户
+            <NavItem eventKey={1} href="#" className="user">
+              <img src={require('../../public/imgs/user.png')} alt="用户" />
             </NavItem>
           </Nav>
         </Navbar.Collapse>
