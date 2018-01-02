@@ -1,0 +1,10 @@
+.article {
+  border: 1px solid #eeeeee;
+  padding: 4px 4px;
+  border-radius: 8px;
+}
+
+.article > .head > img {
+  width: 32px;
+  height: 32px;
+}

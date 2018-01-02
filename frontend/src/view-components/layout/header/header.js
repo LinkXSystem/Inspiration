@@ -17,7 +17,8 @@ class Header extends Component {
     return (
       <Nav>
         {this.props.routers.map(router => (
-          <NavItem key={router.toString()} href="#">
+          // <link to="/books" /> => <a  href="/books"/>
+          <NavItem key={router.toString()} href="/books">
             {router}
           </NavItem>
         ))}
@@ -30,7 +31,7 @@ class Header extends Component {
       <Navbar fluid className="header">
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="/linksystem/">LinkSystem & 灵感</a>
+            <a href="/">LinkSystem & 灵感</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

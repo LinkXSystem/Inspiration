@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import Home from '../../../modules/home/home';
 
-class Router extends Component {
+class Book extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <Home />;
+    return <div>test</div>;
   }
 }
 
-export default Router;
+export default Book;

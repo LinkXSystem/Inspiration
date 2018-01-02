@@ -3,15 +3,16 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import './system.css';
 
-import Carousel from '../../view-components/universal/carousel/carousel';
+import Audio from '../../view-components/universal/player/music-player/music';
+import Directive from '../../view-components/universal/directive/directive';
+import Footnote from '../../view-components/universal/footnote/footnote';
+
+import Carousel from '../../view-components/universal/carousels/carousel';
 import Book from '../../view-components/universal/thumbnails/book-thumbnail/book';
 import Design from '../../view-components/universal/thumbnails/design-thumbnail/design';
 import Code from '../../view-components/universal/thumbnails/code-thumbnail/code';
 import Article from '../../view-components/universal/thumbnails/article-thumbnail/article';
 
-import Audio from '../../view-components/universal/player/music-player/music';
-import Directive from '../../view-components/universal/directive/directive';
-import Footnote from '../../view-components/universal/footnote/footnote';
 
 class Home extends Component {
   constructor(props) {
