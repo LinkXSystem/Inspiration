@@ -3,4 +3,22 @@
   height: 182px;
   padding: 4px 4px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.evaluate + .evaluate {
+  margin-top: 0.5em;
+}
+
+.evaluate > img {
+  border-radius: 4px;
+  width: 115px;
+  height: 172px;
+}
+
+.evaluate > .content > ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
 }

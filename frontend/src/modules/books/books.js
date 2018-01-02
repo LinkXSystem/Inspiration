@@ -30,12 +30,6 @@ class Books extends Component {
               <Col sm={4}>
                 <Book />
               </Col>
-              <Col sm={4}>
-                <Book />
-              </Col>
-              <Col sm={8}>
-                <Book />
-              </Col>
               <Col sm={12}>
                 <blockquote>书评</blockquote>
               </Col>

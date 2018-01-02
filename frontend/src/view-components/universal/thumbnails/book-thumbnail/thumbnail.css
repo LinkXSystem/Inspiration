@@ -30,7 +30,7 @@
   margin-left: 4px;
 }
 
-.content {
+.book > .content {
   height: 182px;
   display: flex;
   flex-direction: column;
@@ -39,11 +39,11 @@
   text-overflow: ellipsis;
 }
 
-.content > .line {
+.book > .content > .line {
   white-space: nowrap;
 }
 
-.content > .typo {
+.book > .content > .typo {
   line-height: 1em;
   height: 3em;
   overflow: hidden;
