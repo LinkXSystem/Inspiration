@@ -1,0 +1,10 @@
+.e-article {
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.e-article > ul > li + li {
+  margin-left: .5em;
+}

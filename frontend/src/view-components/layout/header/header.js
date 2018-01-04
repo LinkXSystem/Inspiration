@@ -18,8 +18,8 @@ class Header extends Component {
       <Nav>
         {this.props.routers.map(router => (
           // <link to="/books" /> => <a  href="/books"/>
-          <NavItem key={router.toString()} href="/books">
-            {router}
+          <NavItem key={router.name} href={router.router}>
+            {router.name}
           </NavItem>
         ))}
       </Nav>
