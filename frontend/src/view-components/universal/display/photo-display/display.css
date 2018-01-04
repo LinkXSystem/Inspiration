@@ -1,0 +1,7 @@
+.photo {
+  background-color: red;
+  margin-left: 10px;
+  flex: 1;
+  height: 300px;
+  border-radius: 8px;
+}

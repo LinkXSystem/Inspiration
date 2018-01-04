@@ -6,14 +6,25 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 // 组件
 import Header from './view-components/layout/header/header';
-import RouterInstancer from './view-components/layout/router/router';
+import RouterInstance from './view-components/layout/router/router';
+import Footer from './view-components/layout/footer/footer';
 
 const App = () => (
   <Router>
     <div>
-      <Header routers={['书籍', '设计', '编程', '音乐', '视频']} />
-      <RouterInstancer />
+      <Header
+        routers={[
+          { name: '书籍', router: '/books' },
+          { name: '设计', router: '/design' },
+          { name: '编程', router: '/coder' },
+          { name: '音乐', router: '/music' },
+          { name: '视频', router: '/video' },
+        ]}
+      />
+      <RouterInstance />
+      <Footer />
     </div>
   </Router>
 );
+
 ReactDOM.render(<App />, document.getElementById('root'));

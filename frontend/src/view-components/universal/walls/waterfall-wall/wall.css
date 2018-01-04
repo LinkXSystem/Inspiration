@@ -1,0 +1,22 @@
+.waterfall-wall {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.waterfall-wall > .drip-row > .drip {
+  border: 1px solid #eeeeee;
+}
+
+.waterfall-wall > .drip-row > .drip > img {
+  width: 182px;
+}
+
+.waterfall-wall > .drip-row > .drip > .info {
+  background-color: #ffffff;
+  width: 182px;
+  padding: 4px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

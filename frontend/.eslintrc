@@ -20,6 +20,7 @@
         "video": ["Video"],
         "track": ["Track"]
       }
-    ]
+    ],
+    "class-methods-use-this": "off"
   }
 }
