@@ -13,7 +13,6 @@ import Design from '../../view-components/universal/thumbnails/design-thumbnail/
 import Code from '../../view-components/universal/thumbnails/code-thumbnail/code';
 import Article from '../../view-components/universal/thumbnails/article-thumbnail/article';
 
-
 class Home extends Component {
   constructor(props) {
     super(props);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Element from '../../elements/';
 
 import './wall.css';
 
@@ -60,24 +61,8 @@ class Waterfall extends Component {
     for (let i = 0; i < row; i += 1) {
       html[i] = (
         <div className="drip-row">
-          <div className="drip" key={i}>
-            <img src={data[i].img} alt="" />
-            <div className="info">
-              <span>
-                <i className="fa fa-file-text" aria-hidden="true" />{' '}
-                {data[i].info}
-              </span>
-            </div>
-          </div>
-          <div className="drip" key={i + row}>
-            <img src={data[i + row].img} alt="" />
-            <div className="info">
-              <span>
-                <i className="fa fa-file-text" aria-hidden="true" />{' '}
-                {data[i + row].info}
-              </span>
-            </div>
-          </div>
+          <Element.Image key={i} data={data[i]} />
+          <Element.Image key={i + row} data={data[i + row]} />
         </div>
       );
     }

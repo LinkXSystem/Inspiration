@@ -1,0 +1,75 @@
+/* 滚动样式 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #272727;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+/* 文字排版 */
+.typesetting {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}
+
+/* 重置样式 */
+.r-ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 主题样式 */
+.t-container {
+  border: 1px solid #eeeeee;
+  padding: 4px 4px;
+  border-radius: 8px;
+}
+
+.t-title {
+  font-size: 1.5em;
+}
+
+.t-icons {
+  text-align: center;
+  color: #ffffff;
+  width: 4em;
+  padding: 0px 2px;
+  border-radius: 4px;
+}
+
+.footer > .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media (max-width: 375px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
