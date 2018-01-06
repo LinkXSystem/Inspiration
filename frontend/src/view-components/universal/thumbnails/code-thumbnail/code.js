@@ -20,7 +20,7 @@ class Code extends Component {
       },
       {
         img: 'https://avatars1.githubusercontent.com/u/170270?v=4',
-        name: 'sindresorhus/on-change',
+        name: 'linksystem/on-change',
         desc: 'Watch an object or array for changes',
         star: '1,119',
         globe: 'JavaScript',
