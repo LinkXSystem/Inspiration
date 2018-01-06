@@ -1,13 +1,4 @@
-.book {
-  border: 1px solid #eeeeee;
-  height: 182px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 8px;
-  padding: 0.25em 0.25em;
-  justify-content: flex-start;
+.th-book {
   background-image: linear-gradient(
     to top right,
     #a8d8b9,
@@ -18,46 +9,106 @@
     #ffffff,
     #877f6c
   );
+  height: 182px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.25em 0.25em;
+  justify-content: flex-start;
 }
 
-.book > img {
+.th-book > img {
   border-radius: 4px;
   width: 115px;
   height: 172px;
 }
 
-.book > img + div {
+.th-book > img + div {
   margin-left: 4px;
 }
 
-.book > .content {
-  height: 182px;
+.th-book > div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.book > .content > .line {
-  white-space: nowrap;
+.th-madol {
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 10;
+  top: 2.5em;
+  right: 15px;
+  width: 300px;
+  box-shadow: 5px 5px 20px #e7e7e7, 5px -5px 20px #e7e7e7, -5px 5px 20px #e7e7e7,
+    -5px -5px 20px #e7e7e7;
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: center center;
+  transition: opacity 1s ease-in, transform 1s;
 }
 
-.book > .content > .typo {
-  line-height: 1em;
-  height: 3em;
-  overflow: hidden;
+.th-madol > h4 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e7e7e7;
 }
 
-.sign {
-  font-style: normal;
-  background-color: #000000;
-  border-radius: 4px;
-  padding: 1px 4px;
-  color: #ffffff;
-  font-size: 0.75em;
+.th-madol > p {
+  padding-left: 4px;
+  height: 150px;
+  overflow-y: auto;
 }
 
-i + i {
-  margin-left: 0.2em;
+.trigger:hover + .th-madol {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.th-madol:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.th-madol > p::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+.th-madol > p::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #a8d8b9;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+.th-madol > p::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #ededed;
+}
+
+@media screen and (max-width: 479px) {
+  .th-madol {
+    transform: translate(-50%) scale(0);
+    left: 50%;
+  }
+
+  .trigger:hover + .th-madol {
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+  }
+
+  .th-madol:hover {
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+  }
 }

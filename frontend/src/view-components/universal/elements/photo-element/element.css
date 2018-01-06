@@ -1,0 +1,12 @@
+.e-image > img {
+  width: 182px;
+}
+
+.e-image > div {
+  background-color: #eeeeee;
+  width: 182px;
+  padding: 4px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

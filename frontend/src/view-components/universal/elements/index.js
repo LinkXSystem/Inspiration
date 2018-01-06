@@ -1,7 +1,5 @@
 import Article from './article-element/article';
-import Image from './image-element/image';
+import Photo from './photo-element/photo';
+import Project from './project-element/project';
 
-export default {
-  Article,
-  Image,
-};
+export { Article, Photo, Project };

@@ -1,30 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTyps from 'prop-types';
 import './thumbnail.css';
-import Expander from './components/expander/expander';
+import builder from '../../../../utils/classname';
 
-const Instance = () => (
-  <div className="book">
-    <img
-      src="https://img3.doubanio.com/view/ark_article_cover/retina/public/43242676.jpg?v=1512120177.0"
-      alt=""
-    />
-    <div className="content">
-      <h5 className="line">
-        <strong>书名：妖猫传</strong>
-      </h5>
-      <p className="line">作者：梦枕貘</p>
-      <p className="line">
-        类别：
-        <i className="sign">推理悬疑</i>
-        <i className="sign">幻想</i>
-        <i className="sign">幻想</i>{' '}
-      </p>
-      <p className="line">来源：豆瓣读书</p>
-      <Expander
-        description={`自日本东渡大唐的高僧空海与寻求《长恨歌》创作灵感的白居易，一同揭开妖魅事件和杨贵妃死亡的谜团。一切妖怪的怨念，都来自咒术，来自人的内心。`}
-      />
-    </div>
-  </div>
-);
+class Book extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-export default Instance;
+  icons(icons) {
+    return icons.map(item => (
+      <i
+        key={item.toString()}
+        className={builder.build(['t-icons'])}
+        style={{ backgroundColor: '#000000' }}
+      >
+        {item}
+      </i>
+    ));
+  }
+
+  render() {
+    return (
+      <div className={builder.build(['t-container', 'typesetting', 'th-book'])}>
+        <img src={this.props.data.img} alt="" />
+        <div>
+          <h4 className={builder.build(['t-line'])}>
+            书名：{this.props.data.name}
+          </h4>
+          <p className={builder.build(['t-line'])}>
+            作者：{this.props.data.author}
+          </p>
+          <p className={builder.build(['t-line'])}>
+            类别：{this.icons(this.props.data.icons)}
+          </p>
+          <p className={builder.build(['t-line'])}>
+            来源：{this.props.data.source}
+          </p>
+          <p className={builder.build(['t-line', 'trigger'])}>
+            描述：{this.props.data.description}
+          </p>
+          <div className={builder.build(['t-container', 'th-madol'])}>
+            <h4>书籍简介</h4>
+            <p>{this.props.data.description}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+Book.propTypes = {
+  data: PropTyps.object.isRequired,
+};
+
+export default Book;

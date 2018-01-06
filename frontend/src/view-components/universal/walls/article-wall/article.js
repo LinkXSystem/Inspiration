@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTyps from 'prop-types';
-import Element from '../../elements';
+import { Article } from '../../elements';
 
-class Article extends Component {
+class Wall extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,14 +10,14 @@ class Article extends Component {
 
   render() {
     const html = this.props.data.map(item => (
-      <Element.Article key={item.info} data={item} />
+      <Article key={item.info} data={item} />
     ));
     return <div>{html}</div>;
   }
 }
 
-Article.propTypes = {
+Wall.propTypes = {
   data: PropTyps.array.isRequired,
 };
 
-export default Article;
+export default Wall;

@@ -14,14 +14,14 @@ class Evaluate extends Component {
         <img src="https://img3.doubanio.com/mpic/s29617101.jpg" alt="" />
         <div className="content">
           <h4>
-            <a href="#">要么孤独，要么庸俗</a>
+            {/* <a href="#">要么孤独，要么庸俗</a> */}
           </h4>
           <ul>
             <li>
-              <a href="#">江南小柒</a>
+              {/* <a href="#">江南小柒</a> */}
             </li>
             <li>
-              <a href="#">《孤独通行证》</a>
+              {/* <a href="#">《孤独通行证》</a> */}
             </li>
           </ul>
           <p>
