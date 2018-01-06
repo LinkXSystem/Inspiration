@@ -1,0 +1,35 @@
+.e-project {
+  height: 182px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.e-project + .e-project {
+  margin-top: 0.5em;
+}
+
+.e-project > div {
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+}
+
+.e-project > div > img {
+  height: 30px;
+}
+
+.e-project > div > h4 {
+  white-space: nowrap;
+  line-height: 1.2em;
+  margin-left: 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.e-project > p {
+  overflow: hidden;
+  flex: 1;
+  text-indent: 2em;
+  border-bottom: 1px solid #eeeeee;
+}

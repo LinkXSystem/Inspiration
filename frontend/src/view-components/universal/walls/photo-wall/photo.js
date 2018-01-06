@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './wall.css';
 
-class Photo extends Component {
+class Wall extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -46,4 +46,4 @@ class Photo extends Component {
   }
 }
 
-export default Photo;
+export default Wall;

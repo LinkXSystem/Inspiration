@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Element from '../../elements/';
+import { Photo } from '../../elements/';
 
 import './wall.css';
 
-class Waterfall extends Component {
+class Wall extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -61,8 +61,8 @@ class Waterfall extends Component {
     for (let i = 0; i < row; i += 1) {
       html[i] = (
         <div className="drip-row">
-          <Element.Image key={i} data={data[i]} />
-          <Element.Image key={i + row} data={data[i + row]} />
+          <Photo key={i} data={data[i]} />
+          <Photo key={i + row} data={data[i + row]} />
         </div>
       );
     }
@@ -75,4 +75,4 @@ class Waterfall extends Component {
   }
 }
 
-export default Waterfall;
+export default Wall;

@@ -9,15 +9,6 @@ class Book extends Component {
     this.state = {};
   }
 
-  description(description) {
-    return (
-      <div className="madol">
-        <h4>书籍简介</h4>
-        <p>{description}</p>
-      </div>
-    );
-  }
-
   icons(icons) {
     return icons.map(item => (
       <i
