@@ -9,8 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm config set registry https://registry.npm.taobao.org'
-                sh 'pwd'
-                sh 'cd Inspiration/frontend/'
+                sh 'cd frontend'
                 sh 'npm install'
             }
         }
