@@ -14,8 +14,9 @@ pipeline {
         }
         stage('Deliver') {
            steps {
-                sh 'cd frontend && npm start'
+                sh './deplay/jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './deplay/jenkins/scripts/kill.sh'
            }
         }
     }
