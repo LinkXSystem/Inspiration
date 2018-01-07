@@ -16,6 +16,7 @@ pipeline {
         stage('Deliver') {
            steps {
                 sh 'cd frontend'
+                sh 'ls -sh'
                 sh 'npm start'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
            }
