@@ -9,15 +9,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm config set registry https://registry.npm.taobao.org'
-                sh 'cd frontend'
-                sh 'npm install'
+                sh 'cd frontend && npm install'
             }
         }
         stage('Deliver') {
            steps {
-                sh 'cd frontend'
-                sh 'ls -sh'
-                sh 'npm start'
+                sh 'cd frontend && npm start'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
            }
         }
