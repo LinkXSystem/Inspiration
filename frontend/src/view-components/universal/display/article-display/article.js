@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import builder from '../../../../utils/classname';
+import builder from '../../../../utils';
 
 import './display.css';
 
@@ -38,7 +38,7 @@ class Article extends Component {
             </ul>
           </div>
         </div>
-        <div className={builder.build(['content', 'typesetting'])}>
+        <div className={builder.classname(['content', 'typesetting'])}>
           <p>
             她和他认识的时候，她已经经历了爱情海洋里的狂风暴雨，对爱情有了不屑一顾的态度。
             他们是在朋友组织的聚会上遇到的，灯红酒绿，纸醉金迷。

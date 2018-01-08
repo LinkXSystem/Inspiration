@@ -1,0 +1,13 @@
+.c-image {
+  background-position: center center;
+  height: 242px;
+  background-size: cover;
+}
+
+@media screen and (max-width:479px){
+  .c-image {
+    background-position: center center;
+    height: 182px;
+    background-size: cover;
+  }
+}

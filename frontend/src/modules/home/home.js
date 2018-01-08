@@ -7,13 +7,13 @@ import Audio from '../../view-components/universal/player/music-player/music';
 import Directive from '../../view-components/universal/directive/directive';
 import Footnote from '../../view-components/universal/footnote/footnote';
 
-import Carousel from '../../view-components/universal/carousels/carousel';
+import { ImageCarousel } from '../../view-components/universal/carousels';
 
 import {
-  Article,
-  Book,
-  Code,
-  Design,
+  ArticleThumbnail,
+  BookThumbnail,
+  CodeThumbnail,
+  DesignThumbnail,
 } from '../../view-components/universal/thumbnails/';
 
 class Home extends Component {
@@ -29,10 +29,10 @@ class Home extends Component {
           <Col md={8}>
             <Row>
               <Col sm={12}>
-                <Carousel />
+                <ImageCarousel />
               </Col>
               <Col sm={12}>
-                <Book
+                <BookThumbnail
                   data={{
                     img:
                       'https://img3.doubanio.com/view/ark_article_cover/retina/public/43242676.jpg?v=1512120177.0',
@@ -46,7 +46,7 @@ class Home extends Component {
                 />
               </Col>
               <Col sm={6}>
-                <Book
+                <BookThumbnail
                   data={{
                     img:
                       'https://img3.doubanio.com/view/ark_article_cover/retina/public/43242676.jpg?v=1512120177.0',
@@ -60,7 +60,7 @@ class Home extends Component {
                 />
               </Col>
               <Col sm={6}>
-                <Book
+                <BookThumbnail
                   data={{
                     img:
                       'https://img3.doubanio.com/view/ark_article_cover/retina/public/43242676.jpg?v=1512120177.0',
@@ -74,13 +74,13 @@ class Home extends Component {
                 />
               </Col>
               <Col sm={12}>
-                <Design />
+                <DesignThumbnail />
               </Col>
               <Col sm={6}>
-                <Code />
+                <CodeThumbnail />
               </Col>
               <Col sm={6}>
-                <Article
+                <ArticleThumbnail
                   data={{
                     title: '从时间旅行的乌托邦，看状态管理的设计误区',
                     content:

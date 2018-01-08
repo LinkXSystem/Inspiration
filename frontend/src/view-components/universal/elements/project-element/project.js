@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTyps from 'prop-types';
 import './element.css';
-import builder from '../../../../utils/classname';
+import builder from '../../../../utils';
 
 const element = props => (
-  <div className={builder.build(['t-container', 'e-project'])}>
+  <div className={builder.classname(['t-container', 'e-project'])}>
     <div>
       <img src="https://avatars1.githubusercontent.com/u/170270?v=4" alt="" />
       <h4>{props.data.name}</h4>
     </div>
     <p>{props.data.desc}</p>
     <ul
-      className={builder.build(['r-ul'])}
+      className={builder.classname(['r-ul'])}
       style={{
         justifyContent: 'space-between',
       }}

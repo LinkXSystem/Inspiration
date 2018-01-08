@@ -1,5 +1,3 @@
 const build = names => names.join(' ');
 
-export default {
-  build,
-};
+export default build;

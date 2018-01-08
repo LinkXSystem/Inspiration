@@ -1,6 +1,6 @@
-import Article from './article-thumbnail/article';
-import Book from './book-thumbnail/book';
-import Code from './code-thumbnail/code';
-import Design from './design-thumbnail/design';
+import ArticleThumbnail from './article-thumbnail/article';
+import BookThumbnail from './book-thumbnail/book';
+import CodeThumbnail from './code-thumbnail/code';
+import DesignThumbnail from './design-thumbnail/design';
 
-export { Article, Book, Code, Design };
+export { ArticleThumbnail, BookThumbnail, CodeThumbnail, DesignThumbnail };

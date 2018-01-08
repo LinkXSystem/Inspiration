@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTyps from 'prop-types';
 
-import builder from '../../../../utils/classname';
+import builder from '../../../../utils';
 
 import './element.css';
 
 const element = props => (
-  <div className={builder.build(['t-container', 'e-article'])}>
-    <span className={builder.build(['t-title'])}>
+  <div className={builder.classname(['t-container', 'e-article'])}>
+    <span className={builder.classname(['t-title'])}>
       <a href={props.data.url}>{props.data.title}</a>
     </span>
-    <ul className={builder.build(['r-ul'])}>
+    <ul className={builder.classname(['r-ul'])}>
       <li
-        className={builder.build(['t-icons'])}
+        className={builder.classname(['t-icons'])}
         style={{
           backgroundColor: 'blue',
         }}

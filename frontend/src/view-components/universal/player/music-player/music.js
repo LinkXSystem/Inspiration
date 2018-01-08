@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 import './player.css';
-import builder from '../../../../utils/classname';
+import builder from '../../../../utils/';
 
 class Audio extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      duration: '00:00',
+      time: '00:00',
+      progress: '0',
       switch: false,
-      time: '0',
     };
     this.play = this.play.bind(this);
+  }
+
+  componentDidMount() {
+    const music = document.getElementById('music-source');
+    music.src = require('./carefree.mp3');
+    music.addEventListener('canplaythrough', () => {
+      this.setState({
+        duration: builder.time(music.duration),
+      });
+    });
   }
 
   play() {
@@ -22,7 +34,8 @@ class Audio extends Component {
       music.play();
       clock = setInterval(() => {
         this.setState({
-          time: music.currentTime,
+          time: builder.time(music.currentTime),
+          progress: music.currentTime * 100 / music.duration,
         });
       }, 1000);
     } else {
@@ -36,11 +49,10 @@ class Audio extends Component {
 
   render() {
     return (
-      <div className={builder.build(['t-container', 'audio'])}>
+      <div className={builder.classname(['t-container', 'audio'])}>
         <div className="song">
           <audio
             id="music-source"
-            src={require('./carefree.mp3')}
             style={{
               display: 'hidden',
             }}
@@ -49,7 +61,7 @@ class Audio extends Component {
             <i className="fa fa-music" aria-hidden="true" /> 聆听声音
           </h5>
           <span>
-            <em>{this.state.time}</em> / 03:26
+            <em>{this.state.time}</em> / <em>{this.state.duration}</em>
           </span>
         </div>
         <div className="controls">
@@ -60,7 +72,10 @@ class Audio extends Component {
           )}
         </div>
         <div className="progress">
-          <div className="progress-bar" style={{ width: '2%' }} />
+          <div
+            className="progress-bar"
+            style={{ width: `${this.state.progress}%` }}
+          />
         </div>
       </div>
     );

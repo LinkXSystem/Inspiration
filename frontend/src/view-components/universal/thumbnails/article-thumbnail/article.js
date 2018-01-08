@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTyps from 'prop-types';
 import './thumbnail.css';
-import builder from '../../../../utils/classname';
+import builder from '../../../../utils';
 
 class Article extends Component {
   constructor(props) {
@@ -51,13 +51,17 @@ class Article extends Component {
   render() {
     return (
       <div
-        className={builder.build(['t-container', 'typesetting', 'th-article'])}
+        className={builder.classname([
+          't-container',
+          'typesetting',
+          'th-article',
+        ])}
       >
-        <h4 className={builder.build(['t-line'])}>
+        <h4 className={builder.classname(['t-line'])}>
           <i className="fa fa-file-text" aria-hidden="true" />{' '}
           {this.props.data.title}
         </h4>
-        <p className={builder.build(['underline'])}>
+        <p className={builder.classname(['underline'])}>
           {this.props.data.content}
         </p>
       </div>
