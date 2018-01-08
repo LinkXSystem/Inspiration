@@ -16,7 +16,7 @@ class Audio extends Component {
 
   componentDidMount() {
     const music = document.getElementById('music-source');
-    music.src = require('./carefree.mp3');
+    music.src = 'http://localhost:4200/music?name=carefree.mp3';
     music.addEventListener('canplaythrough', () => {
       this.setState({
         duration: builder.time(music.duration),
