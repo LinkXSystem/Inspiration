@@ -7,7 +7,10 @@
 /logs
 
 # test's file
-/public
+*.mp3
+*.mp4
+*.flv
+
 
 # testing
 /coverage
