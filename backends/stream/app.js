@@ -1,31 +1,42 @@
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
-const log4js = require('./src/components/log4js');
+// const log4js = require('log4js');
+const utils = require('./src/components/utils/error');
+
+// 路由文件
+const music = require('./routes/music');
+const video = require('./routes/video');
+
+// 日志处理
+const log = global.log4js.getLogger('error');
 
 const app = express();
 
-const logger = log4js.getLogger('cheese');
-global.logger = logger;
+//消除架构
+app.disable('x-powered-by');
 
-app.get('/music', (req, res) => {
-  let filename = req.query.name;
+app.use(cors());
+app.use(
+  global.log4js.connectLogger(global.log4js.getLogger('http'), {
+    level: 'auto'
+  })
+);
 
-  let file = `${__dirname}/public/music/${filename}`;
+app.use('/music', music);
+app.use('/video', video);
 
-  fs.exists(file, state => {
-    if (state) {
-      let stream = fs.createReadStream(file);
-      stream.pipe(res);
-    } else {
-      logger.warn(
-        `this music of ${filename}, the sever disable create the stream o music`
-      );
-      res.end();
-    }
+app.use((req, res, next) => {
+  next(utils.error(404, 'the url or method is unknown.'));
+});
+
+app.use((err, req, res, next) => {
+  log.error(`status: ${err.status}, error's message: ${err.message} `);
+  res.status(err.status || 500);
+  res.set({
+    'Content-Type': 'application/json'
   });
+  return res.json({ statu: 'error', message: err.message });
 });
 
-app.listen(4200, () => {
-  logger.info('the stream starting, listeng on port of 4200 !');
-  console.log('the server listening on port of 4200 !');
-});
+module.exports = app;

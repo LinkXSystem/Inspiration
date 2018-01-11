@@ -1,0 +1,47 @@
+{
+  "appenders": {
+    "out": { "type": "console" },
+    "default": {
+      "type": "dateFile",
+      "filename": "logs/default",
+      "pattern": "-yyyy-MM-dd.log",
+      "alwaysIncludePattern": true
+    },
+    "error": {
+      "type": "dateFile",
+      "filename": "logs/error",
+      "pattern": "-yyyy-MM-dd.log",
+      "alwaysIncludePattern": true
+    },
+    "task": {
+      "type": "dateFile",
+      "filename": "logs/task",
+      "pattern": "-yyyy-MM-dd.log",
+      "alwaysIncludePattern": true
+    },
+    "postgresql": {
+      "type": "dateFile",
+      "filename": "logs/postgresql",
+      "pattern": "-yyyy-MM-dd.log",
+      "alwaysIncludePattern": true
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["out", "default"],
+      "level": "info"
+    },
+    "error": {
+      "appenders": ["error"],
+      "level": "error"
+    },
+    "task": {
+      "appenders": ["task"],
+      "level": "info"
+    },
+    "postgresql": {
+      "appenders": ["postgresql"],
+      "level": "info"
+    }
+  }
+}
