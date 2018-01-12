@@ -1,0 +1,26 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": 1,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/forbid-prop-types": [0, { "forbid": ["array"] }],
+    "jsx-a11y/media-has-caption": [
+      0,
+      {
+        "audio": ["Audio"],
+        "video": ["Video"],
+        "track": ["Track"]
+      }
+    ],
+    "class-methods-use-this": "off"
+  }
+}
