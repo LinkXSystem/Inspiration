@@ -13,13 +13,7 @@
       "pattern": "-yyyy-MM-dd.log",
       "alwaysIncludePattern": true
     },
-    "task": {
-      "type": "dateFile",
-      "filename": "logs/task",
-      "pattern": "-yyyy-MM-dd.log",
-      "alwaysIncludePattern": true
-    },
-    "postgresql": {
+    "mongoose": {
       "type": "dateFile",
       "filename": "logs/postgresql",
       "pattern": "-yyyy-MM-dd.log",
@@ -35,12 +29,8 @@
       "appenders": ["error"],
       "level": "error"
     },
-    "task": {
-      "appenders": ["task"],
-      "level": "info"
-    },
-    "postgresql": {
-      "appenders": ["postgresql"],
+    "mongoose": {
+      "appenders": ["mongoose"],
       "level": "info"
     }
   }
