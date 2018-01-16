@@ -25,7 +25,7 @@ const getProjects = () => {
   return [];
 };
 
-module.export = {
+module.exports = {
   Query: {
     article() {
       return getArticle();

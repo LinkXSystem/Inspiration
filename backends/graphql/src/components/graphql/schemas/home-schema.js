@@ -1,5 +1,5 @@
 const resolvers = require('../resolvers/home-resolver');
-const tools = require('graphql-tools');
+const { makeExecutableSchema } = require('graphql-tools');
 
 const typeDefs = `
 type Article {
@@ -47,7 +47,7 @@ type Query {
 }
 `;
 
-module.exports = tools.makeExecutableSchema({
+module.exports = makeExecutableSchema({
   typeDefs,
   resolvers
 });

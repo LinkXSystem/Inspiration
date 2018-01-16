@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const graphql = require('apollo-server-express');
+const { graphiqlExpress } = require('apollo-server-express');
 const utils = require('./src/components/utils/error');
 
 const home = require('./routes/home');
@@ -25,19 +25,19 @@ app.use(bodyParser.json());
 
 app.use('/home', home);
 
-app.get('/graphiql', graphql.graphiqlExpress({ endpointURL: '/home/' }));
+app.get('/graphiql', graphiqlExpress({ endpointURL: '/home' }));
 
-// app.use((req, res, next) => {
-//   next(utils.error(404, 'the url or method is unknown.'));
-// });
+app.use((req, res, next) => {
+  next(utils.error(404, 'the url or method is unknown.'));
+});
 
-// app.use((err, req, res, next) => {
-//   log.error(`status: ${err.status}, error's message: ${err.message} `);
-//   res.status(err.status || 500);
-//   res.set({
-//     'Content-Type': 'application/json'
-//   });
-//   return res.json({ statu: 'error', message: err.message });
-// });
+app.use((err, req, res, next) => {
+  log.error(`status: ${err.status}, error's message: ${err.message} `);
+  res.status(err.status || 500);
+  res.set({
+    'Content-Type': 'application/json'
+  });
+  return res.json({ statu: 'error', message: err.message });
+});
 
 module.exports = app;
