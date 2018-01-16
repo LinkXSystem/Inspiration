@@ -1,9 +1,16 @@
+const Mongo = require('../../mongoose');
+
 const getArticle = () => {
-  return [];
+  return {
+    author: 'x',
+    title: 'x',
+    context: 'x'
+  };
 };
 
-const getBooks = () => {
-  return [];
+const getBooks = async () => {
+  const data = await Mongo.Book.getBooks(3);
+  return data;
 };
 
 const getDesign = () => {
@@ -20,16 +27,19 @@ const getProjects = () => {
 
 module.export = {
   Query: {
-    article: () => {
+    article() {
       return getArticle();
     },
-    books: () => {
+    books() {
       return getBooks();
     },
-    design: () => {
+    design() {
       return getDesign();
     },
-    projects: () => {
+    music() {
+      return getMusic();
+    },
+    projects() {
       return getProjects();
     }
   }

@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 app.use('/home', home);
 
-app.get('/graphiql', graphql.graphiqlExpress({ endpointURL: '/home' }));
+app.get('/graphiql', graphql.graphiqlExpress({ endpointURL: '/home/' }));
 
 // app.use((req, res, next) => {
 //   next(utils.error(404, 'the url or method is unknown.'));

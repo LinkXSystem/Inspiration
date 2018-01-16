@@ -1,4 +1,4 @@
-const resolver = require('../resolvers/home-resolver');
+const resolvers = require('../resolvers/home-resolver');
 const tools = require('graphql-tools');
 
 const typeDefs = `
@@ -13,8 +13,8 @@ type Book {
   name: String,
   author: String,
   img: String,
-  icons: [String],
-  description: String
+  description: String,
+  icons: [String]
 }
 
 type Design {
@@ -47,9 +47,7 @@ type Query {
 }
 `;
 
-const schema = tools.makeExecutableSchema({
+module.exports = tools.makeExecutableSchema({
   typeDefs,
-  resolver
+  resolvers
 });
-
-module.exports = schema;
