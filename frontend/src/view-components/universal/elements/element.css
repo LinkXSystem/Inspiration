@@ -1,3 +1,39 @@
+/* article */
+
+.e-article {
+  height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.e-article > ul > li + li {
+  margin-left: 0.5em;
+}
+
+/* error */
+
+.e-error {
+  height: 364px;
+}
+
+/* image */
+
+.e-image > img {
+  width: 182px;
+}
+
+.e-image > div {
+  background-color: #eeeeee;
+  width: 182px;
+  padding: 4px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* project */
+
 .e-project {
   height: 182px;
   display: flex;

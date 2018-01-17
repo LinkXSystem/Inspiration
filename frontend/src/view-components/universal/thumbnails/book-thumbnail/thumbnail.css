@@ -1,5 +1,5 @@
 .th-book {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to top right,
     #a8d8b9,
     #ffffff,
@@ -8,7 +8,7 @@
     #ffffff,
     #ffffff,
     #877f6c
-  );
+  ); */
   height: 182px;
   display: flex;
   flex-direction: row;
@@ -72,12 +72,11 @@
 }
 
 .th-madol > p::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 1px;
 }
 
 .th-madol > p::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: #a8d8b9;
   background-image: -webkit-linear-gradient(
     45deg,
