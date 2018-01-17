@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './player.css';
 import builder from '../../../../utils/';
 
-class Audio extends Component {
+class Instance extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class Audio extends Component {
     music.src = 'http://localhost:4200/music?name=carefree.mp3';
     music.addEventListener('canplaythrough', () => {
       this.setState({
-        duration: builder.time(music.duration),
+        duration: builder.musictime(music.duration),
       });
     });
   }
@@ -34,7 +34,7 @@ class Audio extends Component {
       music.play();
       clock = setInterval(() => {
         this.setState({
-          time: builder.time(music.currentTime),
+          time: builder.musictime(music.currentTime),
           progress: music.currentTime * 100 / music.duration,
         });
       }, 1000);
@@ -82,4 +82,4 @@ class Audio extends Component {
   }
 }
 
-export default Audio;
+export default Instance;

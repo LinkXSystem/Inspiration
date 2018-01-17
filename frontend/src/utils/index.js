@@ -1,4 +1,5 @@
 import classname from './classname';
-import time from './time';
+import axios from './axiosbuild';
+import musictime from './musictime';
 
-export default { classname, time };
+export default { classname, axios, musictime };

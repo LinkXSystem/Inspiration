@@ -4,7 +4,7 @@ const router = express.Router();
 const { graphqlExpress } = require('apollo-server-express');
 const schema = require('../src/components/graphql/schemas/home-schema');
 
-router.use(
+router.post(
   '/',
   graphqlExpress({
     schema

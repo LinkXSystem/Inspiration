@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import gql from 'graphql-tag';
+import { apollo } from '../../mock-data';
+
 import './system.css';
 
-import Audio from '../../view-components/universal/player/music-player/music';
+import { Music } from '../../view-components/universal/player';
 import Directive from '../../view-components/universal/directive/directive';
 import Footnote from '../../view-components/universal/footnote/footnote';
 
@@ -20,6 +23,22 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  componentWillMount() {
+    const client = apollo.build('http://localhost:4200/home?');
+
+    client
+      .query({
+        query: gql`
+          {
+            books {
+              source
+            }
+          }
+        `,
+      })
+      .then(console.log);
   }
 
   render() {
@@ -93,7 +112,7 @@ class Home extends Component {
           <Col md={4}>
             <Row>
               <Col sm={12}>
-                <Audio />
+                <Music />
                 <Directive />
                 <Footnote />
               </Col>

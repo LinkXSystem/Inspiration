@@ -13,7 +13,7 @@ const log = global.log4js.getLogger('error');
 
 app.disable('x-powered-by');
 
-// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 
 app.use(
   global.log4js.connectLogger(global.log4js.getLogger('http'), {
