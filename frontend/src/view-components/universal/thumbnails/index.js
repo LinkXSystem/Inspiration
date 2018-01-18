@@ -1,6 +1,5 @@
-import ArticleThumbnail from './article-thumbnail/article';
-import BookThumbnail from './book-thumbnail/book';
-import CodeThumbnail from './code-thumbnail/code';
-import DesignThumbnail from './design-thumbnail/design';
+import ArticleThumbnail from './article/article';
+import BookThumbnail from './book/book';
+import DesignThumbnail from './design/design';
 
-export { ArticleThumbnail, BookThumbnail, CodeThumbnail, DesignThumbnail };
+export { ArticleThumbnail, BookThumbnail, DesignThumbnail };

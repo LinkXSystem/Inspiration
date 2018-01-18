@@ -1,4 +1,5 @@
-import ImageCarousel from './image-carousel/image';
-import BookCarousel from './book-carousel/book';
+import ActionCarousel from './action/action';
+import BookCarousel from './book/book';
+import ImageCarousel from './image/image';
 
-export { ImageCarousel, BookCarousel };
+export { ActionCarousel, BookCarousel, ImageCarousel };

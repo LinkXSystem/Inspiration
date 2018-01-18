@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTyps from 'prop-types';
-import { Article } from '../../elements';
+import { Item } from '../../elements';
 
 class Wall extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Wall extends Component {
 
   render() {
     const html = this.props.data.map(item => (
-      <Article key={item.info} data={item} />
+      <Item key={item.info} data={item} />
     ));
     return <div>{html}</div>;
   }

@@ -42,8 +42,8 @@
   top: 2.5em;
   right: 15px;
   width: 300px;
-  box-shadow: 5px 5px 20px #e7e7e7, 5px -5px 20px #e7e7e7, -5px 5px 20px #e7e7e7,
-    -5px -5px 20px #e7e7e7;
+  box-shadow: 5px 5px 20px #eeeeee, 5px -5px 20px #eeeeee, -5px 5px 20px #eeeeee,
+    -5px -5px 20px #eeeeee;
   transform: scale(0);
   opacity: 0;
   transform-origin: center center;
@@ -58,6 +58,7 @@
 .th-madol > p {
   padding-left: 4px;
   height: 150px;
+  text-indent: 2em;
   overflow-y: auto;
 }
 

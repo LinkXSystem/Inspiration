@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Photo } from '../../elements/';
+import { Image } from '../../elements/';
 
 import './wall.css';
 
@@ -61,8 +61,8 @@ class Wall extends Component {
     for (let i = 0; i < row; i += 1) {
       html[i] = (
         <div className="drip-row">
-          <Photo key={i} data={data[i]} />
-          <Photo key={i + row} data={data[i + row]} />
+          <Image key={i} data={data[i]} />
+          <Image key={i + row} data={data[i + row]} />
         </div>
       );
     }

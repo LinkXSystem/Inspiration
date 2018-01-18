@@ -1,6 +1,19 @@
+/* 配置 Bootstrap */
+div[class='row'] + div[class='row'] {
+  margin-top: 0.5em;
+}
+
+div[class*='col-'] {
+  margin-top: 0.5em;
+}
+
+div[class*='col-sm-'] + div[class*='col-sm-'] {
+  padding-left: 0px;
+}
+
 /* 滚动样式 */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
   height: 1px;
 }
 
@@ -27,6 +40,11 @@ a:hover {
   text-decoration: none !important;
 }
 
+/* 聚焦 */
+input:focus {
+  outline: none;
+}
+
 /* 文字排版 */
 .typesetting {
   font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
@@ -45,9 +63,11 @@ a:hover {
 
 /* 主题样式 */
 .t-container {
-  border: 1px solid #eeeeee;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  /* border: 1px solid #b2b2b2; */
+  background-color: #ffffff;
   padding: 4px 4px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .t-title {
@@ -80,6 +100,10 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
+  div[class*='col-sm-'] + div[class*='col-sm-'] {
+    padding-left: 15px;
+  }
+
   .nav {
     display: flex;
     flex-direction: row;

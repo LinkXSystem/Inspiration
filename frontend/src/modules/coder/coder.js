@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import Directive from '../../view-components/universal/directive/directive';
-import Code from '../../view-components/universal/thumbnails/code-thumbnail/code';
 
 import { Article } from '../../view-components/universal/walls';
 
@@ -24,9 +23,9 @@ class Coder extends Component {
               <Col sm={12}>
                 <blockquote>热门推荐</blockquote>
               </Col>
-              <Col sm={4}>
-                <Code />
-              </Col>
+              {/* <Col sm={6}>
+                <CodeThumbnail />
+              </Col> */}
               {/* <Col sm={8}>
                 <Article />
               </Col> */}

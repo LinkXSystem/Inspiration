@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Image from '../../view-components/universal/thumbnails/design-thumbnail/design';
 import Color from '../../view-components/universal/display/color-display/color';
 import Photo from '../../view-components/universal/display/photo-display/photo';
 import PhotoWall from '../../view-components/universal/walls/photo-wall/photo';
@@ -24,9 +23,9 @@ class Design extends Component {
               <Col sm={12}>
                 <PhotoWall />
               </Col>
-              <Col sm={12}>
+              {/* <Col sm={12}>
                 <Image />
-              </Col>
+              </Col> */}
               <Col sm={12} className="image-group">
                 <Color />
                 <Photo />

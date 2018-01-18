@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="footer">
+  <footer
+    className="footer"
+    style={{
+      backgroundColor: '#ffffff',
+    }}
+  >
     <hr />
     <div className="row footer-top">
       <div className="col-sm-6 col-lg-5 col-sm-offset-1">
