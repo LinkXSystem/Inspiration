@@ -7,10 +7,6 @@ div[class*='col-'] {
   margin-top: 0.5em;
 }
 
-div[class*='col-sm-'] + div[class*='col-sm-'] {
-  padding-left: 0px;
-}
-
 /* 滚动样式 */
 ::-webkit-scrollbar {
   width: 0px;

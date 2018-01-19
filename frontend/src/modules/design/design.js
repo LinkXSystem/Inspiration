@@ -3,8 +3,10 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import Color from '../../view-components/universal/display/color-display/color';
 import Photo from '../../view-components/universal/display/photo-display/photo';
-import PhotoWall from '../../view-components/universal/walls/photo-wall/photo';
-import WaterfallWall from '../../view-components/universal/walls/waterfall-wall/waterfall';
+import {
+  PhotoWall,
+  WaterfallWall,
+} from '../../view-components/universal/walls';
 
 import './system.css';
 

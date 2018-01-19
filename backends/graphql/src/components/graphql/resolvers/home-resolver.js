@@ -9,7 +9,7 @@ const getArticle = () => {
 };
 
 const getBooks = async () => {
-  const data = await Mongo.Book.getBooks(2);
+  const data = await Mongo.Book.getBooks(3);
   return data;
 };
 

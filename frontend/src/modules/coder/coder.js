@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import Directive from '../../view-components/universal/directive/directive';
 
-import { Article } from '../../view-components/universal/walls';
+import { ArticleWall } from '../../view-components/universal/walls';
 
 class Coder extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Coder extends Component {
                 <blockquote>实践文章</blockquote>
               </Col>
               <Col sm={12}>
-                <Article
+                <ArticleWall
                   data={[
                     {
                       title: 'Coursera 的 GraphQL 之旅',

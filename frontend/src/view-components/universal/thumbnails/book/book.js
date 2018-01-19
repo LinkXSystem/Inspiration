@@ -27,7 +27,9 @@ class Book extends Component {
       <div
         className={builder.classname(['t-container', 'typesetting', 'th-book'])}
       >
-        <img src={data.img} alt="" />
+        <div>
+          <img src={data.img} alt="" />
+        </div>
         <div>
           <h4 className={builder.classname(['t-line'])}>书名：{data.name}</h4>
           <p className={builder.classname(['t-line'])}>作者：{data.author}</p>

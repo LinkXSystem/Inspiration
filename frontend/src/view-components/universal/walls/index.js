@@ -1,5 +1,5 @@
-import Article from './article/article';
-import Photo from './photo/photo';
-import Waterfall from './waterfall/waterfall';
+import ArticleWall from './article/article';
+import PhotoWall from './photo/photo';
+import WaterfallWall from './waterfall/waterfall';
 
-export { Article, Photo, Waterfall };
+export { ArticleWall, PhotoWall, WaterfallWall };

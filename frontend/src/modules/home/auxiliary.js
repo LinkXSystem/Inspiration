@@ -22,11 +22,9 @@ function BookList(props) {
   const { data } = props;
   return data ? (
     <div>
-      {data.map(item => (
-        <Col key={item.name} sm={4}>
-          <BookThumbnail data={item} />
-        </Col>
-      ))}
+      <Col sm={12}>
+        {data.map(item => <BookThumbnail key={item.name} data={item} />)}
+      </Col>
     </div>
   ) : (
     <div>

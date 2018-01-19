@@ -8,12 +8,15 @@ import { Music } from '../../view-components/universal/player';
 import Directive from '../../view-components/universal/directive/directive';
 
 import { ActionCarousel } from '../../view-components/universal/carousels';
+import { Error } from '../../view-components/universal/elements';
 
-import { BookList, Image } from './auxiliary';
+import { Image } from './auxiliary';
 
-import { ArticleList, CodeList } from '../../view-components/universal/list';
-
-import { Drag } from '../../view-components/universal/higher';
+import {
+  ArticleList,
+  BookList,
+  CodeList,
+} from '../../view-components/universal/list';
 
 class Home extends Component {
   constructor(props) {
@@ -57,9 +60,18 @@ class Home extends Component {
           <Col md={9}>
             <Row>
               <Col sm={12}>
-                <ActionCarousel />
+                <ActionCarousel time={10000}>
+                  <div>test</div>
+                  <div>test</div>
+                </ActionCarousel>
               </Col>
-              <BookList data={this.state.data.books} />
+              <Col sm={12}>
+                {this.state.data.books ? (
+                  <BookList data={this.state.data.books} />
+                ) : (
+                  <Error />
+                )}
+              </Col>
               <Image />
               <Col sm={5}>
                 <CodeList />
@@ -72,10 +84,8 @@ class Home extends Component {
           <Col md={3}>
             <Row>
               <Col sm={12}>
+                <Music />
                 <Directive />
-                <Drag random={false}>
-                  <Music />
-                </Drag>
               </Col>
             </Row>
           </Col>

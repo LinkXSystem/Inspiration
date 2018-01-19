@@ -39,7 +39,7 @@ class Header extends Component {
           {/* 路由 */}
           {this.router()}
           <Nav pullRight>
-            <NavItem eventKey={1} href="#" className="user">
+            <NavItem eventKey={1} href="/user" className="user">
               <img src={require('../../public/imgs/user.png')} alt="用户" />
             </NavItem>
           </Nav>
