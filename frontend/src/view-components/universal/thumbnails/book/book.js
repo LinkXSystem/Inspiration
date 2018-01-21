@@ -3,7 +3,7 @@ import PropTyps from 'prop-types';
 import './thumbnail.css';
 import builder from '../../../../utils';
 
-class Book extends Component {
+class Instance extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -50,8 +50,8 @@ class Book extends Component {
   }
 }
 
-Book.propTypes = {
+Instance.propTypes = {
   data: PropTyps.object.isRequired,
 };
 
-export default Book;
+export default Instance;

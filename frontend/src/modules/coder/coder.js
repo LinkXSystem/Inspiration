@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import Directive from '../../view-components/universal/directive/directive';
 
-import { ArticleWall } from '../../view-components/universal/walls';
+import { ArticleList, CodeList } from '../../view-components/universal/list';
 
 class Coder extends Component {
   constructor(props) {
@@ -23,9 +23,9 @@ class Coder extends Component {
               <Col sm={12}>
                 <blockquote>热门推荐</blockquote>
               </Col>
-              {/* <Col sm={6}>
-                <CodeThumbnail />
-              </Col> */}
+              <Col sm={5}>
+                <CodeList />
+              </Col>
               {/* <Col sm={8}>
                 <Article />
               </Col> */}
@@ -33,17 +33,7 @@ class Coder extends Component {
                 <blockquote>实践文章</blockquote>
               </Col>
               <Col sm={12}>
-                <ArticleWall
-                  data={[
-                    {
-                      title: 'Coursera 的 GraphQL 之旅',
-                      url: '/test',
-                      type: '前端',
-                      author: 'linksystem',
-                      date: '2018.1.5',
-                    },
-                  ]}
-                />
+                <ArticleList />
               </Col>
             </Row>
           </Col>

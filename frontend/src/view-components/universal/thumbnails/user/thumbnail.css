@@ -1,0 +1,96 @@
+.th-user {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.th-user > div {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 182px;
+}
+
+.th-user > fieldset {
+  background-color: #ffffff;
+  padding: 0.5em 1em 2em 1em;
+  margin-top: -54px;
+  font-size: 1.15em;
+  position: relative;
+}
+
+.th-user > fieldset > legend {
+  background-color: #ffffff;
+  padding: 4px 4px;
+  width: auto;
+  border-bottom: 0;
+  border-radius: 4px;
+  margin-bottom: 0px;
+}
+
+.th-user > fieldset > legend > img {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  width: 100px;
+  height: 100px;
+}
+
+.th-user > fieldset > ul {
+  position: absolute;
+  top: 3.5em;
+  right: 1em;
+  font-size: 1.25em;
+}
+
+.fieldset-info {
+  color: #72777b;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fieldset-info > div {
+  width: calc(100% - 125px);
+}
+
+.fieldset-info > div > p {
+  margin: 0.5em 0em 0em;
+}
+
+.fieldset-info > button {
+  border-radius: 4px;
+  text-align: center;
+  padding: 0.25em 1em;
+  border: 0px;
+  min-width: 125px;
+  color: #0084ff;
+  background-color: #ffffff;
+  border: 1px solid #0084ff;
+}
+
+.fieldset-info > button:focus {
+  outline: #0084ff auto 0px;
+}
+
+@media screen and (max-width: 479px) {
+  .fieldset-info {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .fieldset-info > div {
+    width: 100%;
+  }
+
+  .fieldset-info > div > ul {
+    flex-direction: column;
+  }
+
+  .fieldset-info > div > ul > li:nth-of-type(1) {
+    width: 100%;
+    display: block;
+    text-align: start;
+  }
+
+  .fieldset-info > button {
+    margin-top: 0.5em;
+  }
+}

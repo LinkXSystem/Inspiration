@@ -7,6 +7,15 @@ div[class*='col-'] {
   margin-top: 0.5em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 /* 滚动样式 */
 ::-webkit-scrollbar {
   width: 0px;
@@ -32,10 +41,6 @@ div[class*='col-'] {
   background: #ededed;
 }
 
-a:hover {
-  text-decoration: none !important;
-}
-
 /* 聚焦 */
 input:focus {
   outline: none;
@@ -48,6 +53,14 @@ input:focus {
 }
 
 /* 重置样式 */
+i {
+  vertical-align: middle;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
 .r-ul {
   margin-bottom: 0px;
   list-style: none;
@@ -57,9 +70,13 @@ input:focus {
   justify-content: flex-start;
 }
 
+.r-ul > li + li {
+  margin-left: 0.5em;
+}
+
 /* 主题样式 */
 .t-container {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   /* border: 1px solid #b2b2b2; */
   background-color: #ffffff;
   padding: 4px 4px;
@@ -80,7 +97,6 @@ input:focus {
   text-align: center;
   font-style: normal;
   color: #ffffff;
-  width: 4em;
   font-size: 0.75em;
   padding: 0.1em 0.5em;
   border-radius: 4px;
