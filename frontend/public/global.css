@@ -16,6 +16,30 @@ h5 {
   margin-bottom: 0px !important;
 }
 
+.navbar-default {
+  background-color: #ffffff !important;
+  font-size: 1.2em;
+  border: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+  border-radius: 0px !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.navbar-header > a {
+  font-weight: bold;
+}
+
+.user > a {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.user > a > img {
+  width: 30px;
+  height: 30px;
+}
+
 /* 滚动样式 */
 ::-webkit-scrollbar {
   width: 0px;
@@ -47,6 +71,11 @@ input:focus {
 }
 
 /* 文字排版 */
+body {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
+    Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}
+
 .typesetting {
   font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei,
     Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
@@ -104,6 +133,17 @@ a:hover {
 
 .t-icons + .t-icons {
   margin-left: 0.5em;
+}
+
+.t-button {
+  background-color: #ffffff;
+  border: 0px;
+  padding: 0px;
+  color: #337ab7;
+}
+
+.t-button {
+  outline: 0px;
 }
 
 .footer > .row {

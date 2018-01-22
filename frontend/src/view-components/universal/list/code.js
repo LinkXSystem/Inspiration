@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { axios } from '../../../mock-data';
 // import builder from '../../../../utils';
 import './list.css';
-import { Repository } from '../elements';
+import { Repository } from '../element';
 
 class Code extends Component {
   constructor(props) {

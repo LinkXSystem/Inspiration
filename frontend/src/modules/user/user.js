@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import { UserThumbnail } from '../../view-components/universal/thumbnails';
-import { UserWall } from '../../view-components/universal/walls';
+import { UserThumbnail } from '../../view-components/universal/thumbnail';
 
 class User extends Component {
   constructor(props) {
@@ -18,9 +17,6 @@ class User extends Component {
             <Row>
               <Col sm={12}>
                 <UserThumbnail />
-              </Col>
-              <Col sm={12}>
-                <UserWall />
               </Col>
             </Row>
           </Col>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Item } from '../elements';
+import { Item } from '../element';
 
 class Instance extends Component {
   constructor(props) {

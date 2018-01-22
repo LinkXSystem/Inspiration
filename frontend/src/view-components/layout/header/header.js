@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTyps from 'prop-types';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
-import '../../public/fonts/fonts.css';
+import { AuthThumbnail } from '../../universal/thumbnail';
 
-import './header.css';
+import '../../public/fonts/fonts.css';
 
 class Header extends Component {
   constructor(props) {
@@ -39,8 +39,11 @@ class Header extends Component {
           {/* 路由 */}
           {this.router()}
           <Nav pullRight>
-            <NavItem eventKey={1} href="/user" className="user">
+            {/* <NavItem eventKey={1} href="/user" className="user">
               <img src={require('../../public/imgs/user.png')} alt="用户" />
+            </NavItem> */}
+            <NavItem eventKey={1}>
+              <AuthThumbnail />
             </NavItem>
           </Nav>
         </Navbar.Collapse>

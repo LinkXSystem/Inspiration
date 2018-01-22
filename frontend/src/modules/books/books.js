@@ -7,9 +7,9 @@ import { apollo } from '../../mock-data';
 import Evaluate from '../../view-components/universal/display/evaluate-display/evaluate';
 import Article from '../../view-components/universal/display/article-display/article';
 
-import { Error } from '../../view-components/universal/elements';
+import { Error } from '../../view-components/universal/element';
 import { BookList } from '../../view-components/universal/list';
-import { BookCarousel } from '../../view-components/universal/carousels';
+import { BookCarousel } from '../../view-components/universal/carousel';
 
 class Books extends Component {
   constructor(props) {

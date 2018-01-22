@@ -7,10 +7,9 @@ import { apollo } from '../../mock-data';
 import { Music } from '../../view-components/universal/player';
 import Directive from '../../view-components/universal/directive/directive';
 
-import { ActionCarousel } from '../../view-components/universal/carousels';
-import { Error } from '../../view-components/universal/elements';
-
-import { Image } from './auxiliary';
+import { ActionCarousel } from '../../view-components/universal/carousel';
+import { Error } from '../../view-components/universal/element';
+import { DesignThumbnail } from '../../view-components/universal/thumbnail';
 
 import {
   ArticleList,
@@ -72,7 +71,9 @@ class Home extends Component {
                   <Error />
                 )}
               </Col>
-              <Image />
+              <Col sm={12}>
+                <DesignThumbnail />
+              </Col>
               <Col sm={5}>
                 <CodeList />
               </Col>

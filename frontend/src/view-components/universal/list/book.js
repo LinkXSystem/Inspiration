@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BookThumbnail } from '../thumbnails';
+import { BookThumbnail } from '../thumbnail';
 
 import './list.css';
 
