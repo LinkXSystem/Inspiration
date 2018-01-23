@@ -5,7 +5,7 @@ const utils = require('../src/components/utils/error');
 const mongo = require('../src/components/mongoose');
 const redis = require('../src/components/redis');
 
-router.head('/verify', async (req, res, next) => {
+router.head('/', async (req, res, next) => {
   const access = req.headers.access;
 
   if (!access) {
@@ -24,9 +24,10 @@ router.head('/verify', async (req, res, next) => {
 
   res
     .set({
-      'content-type': 'application/json',
-      'cache-control': 'no-cache',
-      authorization: `inspiration ${result[0].secret}`
+      'Access-Control-Expose-Headers': 'X-Auth-Token',
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+      'X-Auth-Token': `inspiration ${result[0].secret}`
     })
     .json();
 });
