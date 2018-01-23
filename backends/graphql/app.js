@@ -4,7 +4,11 @@ const bodyParser = require('body-parser');
 const { graphiqlExpress } = require('apollo-server-express');
 const utils = require('./src/components/utils/error');
 
+const auth = require('./routes/authorize');
+
 const home = require('./routes/home');
+
+const interceptor = require('./src/components/utils/interceptor');
 
 const app = new express();
 
@@ -22,6 +26,10 @@ app.use(
 );
 
 app.use(bodyParser.json());
+
+app.use('/auth', auth);
+
+app.use(interceptor.verifytoken);
 
 app.use('/home', home);
 

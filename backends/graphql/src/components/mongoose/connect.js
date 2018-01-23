@@ -1,4 +1,4 @@
-// const log = global.log4js.getLogger('mongoose');
+const log = global.log4js.getLogger('mongoose');
 
 const mongoose = require('mongoose');
 
@@ -10,15 +10,15 @@ mongoose.connect(url, {
 });
 
 mongoose.connection.on('connect', () => {
-    // log.info(`connect to ${url}`);
+  log.info(`connect to ${url}`);
 });
 
 mongoose.connection.on('error', err => {
-    // log.error(`connect error : ${err.message}`);
+  log.error(`connect error : ${err.message}`);
 });
 
 mongoose.connection.on('disconnected', () => {
-    // log.info(`disconnect to ${url}`);
+  log.info(`disconnect to ${url}`);
 });
 
 module.exports = mongoose;
