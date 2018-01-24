@@ -4,9 +4,10 @@ const mongoose = require('mongoose');
 
 const url = 'mongodb://localhost:27017/inspiration';
 
+mongoose.Promise = global.Promise;
+
 mongoose.connect(url, {
-  useMongoClient: true,
-  promiseLibrary: global.Promise
+  useMongoClient: true
 });
 
 mongoose.connection.on('connect', () => {

@@ -1,19 +1,22 @@
 import axios from 'axios';
 import { fingerprint } from '../../utils';
 
+/**
+ *
+ * @param {基本链接} url
+ * @author linksystem
+ * @description  封装用于访问的 url 基础
+ */
 const usual = url =>
   axios.create({
     baseURL: url,
-    timeout: 4000,
+    // timeout: 4000,
   });
 
-const build = async () => {
+const grant = async () => {
+  const instance = usual('http://localhost:8080');
+
   const canvas = await fingerprint();
-
-  const instance = axios.create({
-    baseURL: 'http://localhost:4200',
-    timeout: 4000,
-  });
 
   const res = await instance.head('/auth/', {
     headers: {
@@ -22,7 +25,13 @@ const build = async () => {
     },
   });
 
-  const token = res.headers['x-auth-token'];
+  return res.headers['x-auth-token'];
+};
+
+const build = async () => {
+  const instance = usual('http://localhost:8080');
+
+  const token = await grant();
 
   instance.interceptors.request.use(
     config =>
@@ -44,5 +53,6 @@ const build = async () => {
 
 export default {
   usual,
+  grant,
   build,
 };

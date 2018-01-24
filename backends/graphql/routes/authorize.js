@@ -26,9 +26,9 @@ router.head('/', async (req, res, next) => {
   res
     .set({
       'Access-Control-Expose-Headers': 'X-Auth-Token',
+      'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
-      'X-Auth-Token': token,
-      'Content-Type': 'application/json'
+      'X-Auth-Token': token
     })
     .json();
 });

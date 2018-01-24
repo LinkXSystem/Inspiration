@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import gql from 'graphql-tag';
-import { apollo } from '../../mock';
+import { apollo, graphql } from '../../mock';
 
 import { Music } from '../../views/universal/player';
 import Directive from '../../views/universal/directive/directive';
@@ -11,11 +10,7 @@ import { ActionCarousel } from '../../views/universal/carousel';
 import { Error } from '../../views/universal/element';
 import { DesignThumbnail } from '../../views/universal/thumbnail';
 
-import {
-  ArticleList,
-  BookList,
-  CodeList,
-} from '../../views/universal/list';
+import { ArticleList, BookList, CodeList } from '../../views/universal/list';
 
 class Home extends Component {
   constructor(props) {
@@ -23,29 +18,22 @@ class Home extends Component {
     this.state = {
       data: [],
     };
-    this.build = this.build.bind(this);
+    this.init = this.init.bind(this);
   }
 
   componentWillMount() {
-    this.build();
+    this.init();
   }
 
-  async build() {
-    const client = apollo.build('http://localhost:4200/home');
+  async init() {
+    const token = sessionStorage.getItem('x-auth-token');
+
+    const client = apollo.build('http://localhost:8080/home', {
+      'x-auth-token': token,
+    });
 
     const res = await client.query({
-      query: gql`
-        {
-          books {
-            source
-            name
-            author
-            img
-            description
-            icons
-          }
-        }
-      `,
+      query: graphql.home.querys,
     });
     this.setState({
       data: res.data,
