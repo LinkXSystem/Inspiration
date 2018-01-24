@@ -1,12 +1,18 @@
 import axios from 'axios';
 import { fingerprint } from '../../utils';
 
+const usual = url =>
+  axios.create({
+    baseURL: url,
+    timeout: 4000,
+  });
+
 const build = async () => {
   const canvas = await fingerprint();
 
   const instance = axios.create({
     baseURL: 'http://localhost:4200',
-    timeout: 1000,
+    timeout: 4000,
   });
 
   const res = await instance.head('/auth/', {
@@ -37,5 +43,6 @@ const build = async () => {
 };
 
 export default {
+  usual,
   build,
 };
