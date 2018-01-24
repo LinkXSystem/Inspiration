@@ -1,5 +1,6 @@
 import classname from './classname';
-import axios from './axiosbuild';
+import axios from './axiosbuilder';
 import musictime from './musictime';
+import fingerprint from './fingerprint';
 
-export default { classname, axios, musictime };
+export default { classname, axios, fingerprint, musictime };

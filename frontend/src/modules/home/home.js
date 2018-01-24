@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import gql from 'graphql-tag';
-import { apollo } from '../../mock-data';
+import { apollo } from '../../mock';
+import utils from '../../utils';
 
 import { Music } from '../../view-components/universal/player';
 import Directive from '../../view-components/universal/directive/directive';
@@ -31,6 +32,10 @@ class Home extends Component {
   }
 
   async build() {
+    const instance = await utils.axios.build();
+
+    console.warn(instance.get('/test/'));
+
     const client = apollo.build('http://localhost:4200/home');
 
     const res = await client.query({

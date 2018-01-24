@@ -7,8 +7,9 @@ const redis = require('../src/components/redis');
 
 router.head('/', async (req, res, next) => {
   const access = req.headers.access;
+  const canvas = req.headers.canvas;
 
-  if (!access) {
+  if (!access && !canvas) {
     return next(utils.error(400, 'information exception'));
   }
 
@@ -18,16 +19,16 @@ router.head('/', async (req, res, next) => {
     return next(utils.error(400, 'information exception'));
   }
 
-  const token = `inspiration ${result[0].secret}`;
+  const token = `inspiration ${result[0].secret} ${canvas}`;
 
-  redis.core.set(token, new Date().toLocaleTimeString(), 'EX', 2 * 60 * 60);
+  redis.core.set(token, canvas, 'EX', 2 * 60 * 60);
 
   res
     .set({
       'Access-Control-Expose-Headers': 'X-Auth-Token',
-      'Content-Type': 'application/json',
       'Cache-Control': 'no-cache',
-      'X-Auth-Token': `inspiration ${result[0].secret}`
+      'X-Auth-Token': token,
+      'Content-Type': 'application/json'
     })
     .json();
 });
