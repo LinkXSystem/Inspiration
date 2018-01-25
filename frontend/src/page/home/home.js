@@ -1,7 +1,11 @@
+// react
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-
-import { apollo, graphql } from '../../mock';
+// lodash
+import _ from 'lodash';
+// mobx
+import { observer } from 'mobx-react';
+import store from '../../stores';
 
 import { Music } from '../../views/universal/player';
 import Directive from '../../views/universal/directive/directive';
@@ -12,32 +16,13 @@ import { DesignThumbnail } from '../../views/universal/thumbnail';
 
 import { ArticleList, BookList, CodeList } from '../../views/universal/list';
 
+@observer
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
     };
-    this.init = this.init.bind(this);
-  }
-
-  componentWillMount() {
-    this.init();
-  }
-
-  async init() {
-    const token = sessionStorage.getItem('x-auth-token');
-
-    const client = apollo.build('http://localhost:8080/home', {
-      'x-auth-token': token,
-    });
-
-    const res = await client.query({
-      query: graphql.home.querys,
-    });
-    this.setState({
-      data: res.data,
-    });
   }
 
   render() {
@@ -53,10 +38,10 @@ class Home extends Component {
                 </ActionCarousel>
               </Col>
               <Col sm={12}>
-                {this.state.data.books ? (
-                  <BookList data={this.state.data.books} />
-                ) : (
+                {_.isEmpty(store.home.books) ? (
                   <Error />
+                ) : (
+                  <BookList data={store.home.books} />
                 )}
               </Col>
               <Col sm={12}>

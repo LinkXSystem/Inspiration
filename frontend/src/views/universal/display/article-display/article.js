@@ -11,11 +11,14 @@ class Article extends Component {
   }
 
   render() {
+    /* eslint-disable global-require */
+    const image = require('../../../public/imgs/user.png');
+    /* eslint-enable global-require */
     return (
       <div className="article">
         <h3 className="title">忆起风筝</h3>
         <div className="info">
-          <img src={require('../../../public/imgs/user.png')} alt="用户" />
+          <img src={image} alt="用户" />
           <div className="author">
             <span>惊鸿2017</span>
             <ul>

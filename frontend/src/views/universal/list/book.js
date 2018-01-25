@@ -21,7 +21,7 @@ class Instance extends Component {
 }
 
 Instance.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default Instance;

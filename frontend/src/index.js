@@ -1,26 +1,41 @@
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-// 系统
+// react
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-// 组件
+// PropTypes
+import PropTypes from 'prop-types';
+// mobx
+import { observer } from 'mobx-react';
+import store from './stores';
+// component
 import Header from './layout/header/header';
 import Center from './layout/router/router';
 import Footer from './layout/footer/footer';
-// 数据
+// data
 import { axios } from './mock';
-import store from './stores';
-import DevTools from 'mobx-react-devtools';
+import { fingerprint } from './utils';
 
+@observer
 class App extends Component {
-  componentWillMount() {
-    this.init();
+  getChildContext() {
+    return {
+      store: store,
+    };
   }
 
-  async init() {
-    const token = await axios.grant();
-    sessionStorage.setItem('x-auth-token', token);
+  async componentWillMount() {
+    const canvas = await fingerprint();
+    const auth = await axios.grant(
+      'http://localhost:8080/auth',
+      {
+        access: 'linksystem-inspiration',
+        canvas: canvas,
+      },
+      'x-auth-token',
+    );
+    store.setAuth(auth);
   }
 
   render() {
@@ -39,10 +54,13 @@ class App extends Component {
           <Center />
           <Footer />
         </div>
-        <DevTools />
       </Router>
     );
   }
 }
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+App.childContextTypes = {
+  store: PropTypes.object,
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -50,7 +50,9 @@ class element extends Component {
               注册
             </button>
           </span>
-          <a href="/password">忘记密码</a>
+          <span>
+            <a href="/password">忘记密码</a>
+          </span>
         </div>
         <p>第三方账号登陆 :</p>
         <ul className="r-ul">

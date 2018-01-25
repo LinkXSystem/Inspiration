@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { fingerprint } from '../../utils';
 
 /**
  *
@@ -10,28 +9,37 @@ import { fingerprint } from '../../utils';
 const usual = url =>
   axios.create({
     baseURL: url,
-    // timeout: 4000,
+    timeout: 4000,
   });
 
-const grant = async () => {
-  const instance = usual('http://localhost:8080');
+/**
+ *
+ * @param {指定授权链接} url
+ * @param {授权配置} head
+ * @param {获取Token} field
+ * @author linksystem
+ * @description  获取授权
+ */
+const grant = async (url, head, field) => {
+  if (!url || !field) {
+    return 'args is empty';
+  }
 
-  const canvas = await fingerprint();
+  const headers = head || {};
 
-  const res = await instance.head('/auth/', {
-    headers: {
-      access: 'linksystem-inspiration',
-      canvas: canvas,
-    },
+  const res = await axios.head(url, {
+    headers: headers,
   });
 
-  return res.headers['x-auth-token'];
+  return res.headers[field];
 };
 
 const build = async () => {
   const instance = usual('http://localhost:8080');
 
-  const token = await grant();
+  await grant();
+
+  const token = sessionStorage.getItem('x-auth-token');
 
   instance.interceptors.request.use(
     config =>

@@ -33,7 +33,7 @@ app.use(interceptor.verifytoken);
 
 app.use('/home', home);
 
-app.get('/graphiql', graphiqlExpress({ endpointURL: '/home' }));
+// app.get('/graphiql', graphiqlExpress({ endpointURL: '/home' }));
 
 app.use((req, res, next) => {
   next(utils.error(404, 'the url or method is unknown.'));

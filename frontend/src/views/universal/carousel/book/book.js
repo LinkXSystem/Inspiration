@@ -102,4 +102,5 @@ Instance.prototypes = {
   children: PropTypes.array.isRequired,
   time: PropTypes.number.isRequired,
 };
+
 export default Instance;

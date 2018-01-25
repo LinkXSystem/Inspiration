@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTyps from 'prop-types';
-import { Item } from '../../elements';
+import { Item } from '../../element';
 
 class Wall extends Component {
   constructor(props) {

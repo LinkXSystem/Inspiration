@@ -10,12 +10,21 @@ class Instance extends Component {
       core: 10,
       children: [],
     };
+    this.init = this.init.bind(this);
     this.update = this.update.bind(this);
     this.rollup = this.rollup.bind(this);
     this.change = this.change.bind(this);
   }
 
   componentDidMount() {
+    this.init();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.clock);
+  }
+
+  init() {
     const { children } = this.carousel;
     const { core } = this.state;
     const { time } = this.props;
@@ -25,10 +34,6 @@ class Instance extends Component {
       children: children,
     });
     this.clock = setInterval(this.rollup, time);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.clock);
   }
 
   update(dom) {

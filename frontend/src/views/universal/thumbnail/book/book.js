@@ -24,19 +24,15 @@ class Instance extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div
-        className={classname(['t-container', 'typesetting', 'th-book'])}
-      >
+      <div className={classname(['t-container', 'typesetting', 'th-book'])}>
         <div>
           <img src={data.img} alt="" />
         </div>
         <div>
-          <p className={classname(['t-line'])}>书名：{data.name}</p>
-          <p className={classname(['t-line'])}>作者：{data.author}</p>
-          <p className={classname(['t-line'])}>
-            类别：{this.icons(data.icons)}
-          </p>
-          <p className={classname(['t-line'])}>来源：{data.source}</p>
+          <p className="t-line">书名：{data.name}</p>
+          <p className="t-line">作者：{data.author}</p>
+          <p className="t-line">类别：{this.icons(data.icons)}</p>
+          <p className="t-line">来源：{data.source}</p>
           <p className={classname(['t-line', 'trigger'])}>
             描述：{data.description}
           </p>
