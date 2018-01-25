@@ -10,6 +10,8 @@ import Center from './layout/router/router';
 import Footer from './layout/footer/footer';
 // 数据
 import { axios } from './mock';
+import store from './stores';
+import DevTools from 'mobx-react-devtools';
 
 class App extends Component {
   componentWillMount() {
@@ -37,9 +39,10 @@ class App extends Component {
           <Center />
           <Footer />
         </div>
+        <DevTools />
       </Router>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App store={store} />, document.getElementById('root'));

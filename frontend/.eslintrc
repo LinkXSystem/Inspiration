@@ -4,6 +4,7 @@
     "browser": true,
     "node": true
   },
+  "parser": "babel-eslint",
   "rules": {
     "arrow-parens": 0,
     "no-console": 1,
