@@ -5,16 +5,16 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import _ from 'lodash';
 // mobx
 import { observer } from 'mobx-react';
-import store from '../../stores';
+import store from '../stores';
 
-import { Music } from '../../views/universal/player';
-import Directive from '../../views/universal/directive/directive';
+import { Music } from '../views/universal/player';
+import Directive from '../views/universal/directive/directive';
 
-import { ActionCarousel } from '../../views/universal/carousel';
-import { Error } from '../../views/universal/element';
-import { DesignThumbnail } from '../../views/universal/thumbnail';
+import { ActionCarousel } from '../views/universal/carousel';
+import { Error } from '../views/universal/element';
+import { DesignThumbnail } from '../views/universal/thumbnail';
 
-import { ArticleList, BookList, CodeList } from '../../views/universal/list';
+import { ArticleList, BookList, CodeList } from '../views/universal/list';
 
 @observer
 class Home extends Component {

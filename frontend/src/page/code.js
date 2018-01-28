@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Directive from '../../views/universal/directive/directive';
+import Directive from '../views/universal/directive/directive';
 
-import { ArticleList, CodeList } from '../../views/universal/list';
+import { ArticleList, CodeList } from '../views/universal/list';
 
 class Coder extends Component {
   constructor(props) {

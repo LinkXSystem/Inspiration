@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import gql from 'graphql-tag';
-import { apollo } from '../../mock';
+import { apollo } from '../mock';
 
-import Evaluate from '../../views/universal/display/evaluate-display/evaluate';
-import Article from '../../views/universal/display/article-display/article';
+import Evaluate from '../views/universal/display/evaluate-display/evaluate';
+import Article from '../views/universal/display/article-display/article';
 
-import { Error } from '../../views/universal/element';
-import { BookList } from '../../views/universal/list';
-import { BookCarousel } from '../../views/universal/carousel';
+import { Error } from '../views/universal/element';
+import { BookList } from '../views/universal/list';
+import { BookCarousel } from '../views/universal/carousel';
 
 class Books extends Component {
   constructor(props) {

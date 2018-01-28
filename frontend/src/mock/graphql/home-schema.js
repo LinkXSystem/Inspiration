@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const querys = gql`
-  {
-    books {
+  query {
+    books(number: 3) {
       source
       name
       author

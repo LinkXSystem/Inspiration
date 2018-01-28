@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import { Home, Book, Code, Design, User } from '../../page';
+import { Home, Book, Code, Design, User } from '../page';
 
 const Router = () => (
   <div>

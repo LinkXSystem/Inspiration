@@ -40,7 +40,7 @@ type Project {
 
 type Query {
   article: Article,
-  books: [Book],
+  books(number: Int): [Book],
   design: Design,
   music: Music
   projects: [Project]

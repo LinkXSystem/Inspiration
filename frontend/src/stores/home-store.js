@@ -1,4 +1,5 @@
-import { observable, autorun, action, useStrict } from 'mobx';
+import { observable, when, action, useStrict } from 'mobx';
+import _ from 'lodash';
 import { apollo, graphql } from '../mock';
 
 useStrict(true);
@@ -6,12 +7,16 @@ useStrict(true);
 class HomeStore {
   constructor(root) {
     this.root = root;
-    autorun(() => {
-      const { auth } = this.root;
-      if (auth) {
+    when(
+      () => {
+        const { auth } = this.root;
+        return !_.isEmpty(auth);
+      },
+      () => {
+        const { auth } = this.root;
         this.mock(auth);
-      }
-    });
+      },
+    );
   }
 
   @observable books = [];

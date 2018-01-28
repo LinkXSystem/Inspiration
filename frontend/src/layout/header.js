@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTyps from 'prop-types';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
-import { AuthThumbnail } from '../../views/universal/thumbnail';
+import { Auth } from '../page';
 
-import '../../views/public/fonts/fonts.css';
+import '../views/public/fonts/fonts.css';
 
 class Header extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class Header extends Component {
               <img src={require('../../public/imgs/user.png')} alt="用户" />
             </NavItem> */}
             <NavItem eventKey={1}>
-              <AuthThumbnail />
+              <Auth />
             </NavItem>
           </Nav>
         </Navbar.Collapse>

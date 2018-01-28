@@ -2,13 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { graphiqlExpress } = require('apollo-server-express');
-const utils = require('./src/components/utils/error');
+
+const utils = require('./src/utils/error');
 
 const auth = require('./routes/authorize');
-
 const home = require('./routes/home');
+const user = require('./routes/user');
 
-const interceptor = require('./src/components/utils/interceptor');
+const interceptor = require('./src/utils/interceptor');
 
 const app = new express();
 
@@ -26,22 +27,26 @@ app.use(
 );
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
+// 处理访问授权
 app.use('/auth', auth);
-
+// 处理凭证
 app.use(interceptor.verifytoken);
-
+// 处理用户登陆·注册
+app.use('/user', user);
+// 处理首页数据
 app.use('/home', home);
 
-// app.get('/graphiql', graphiqlExpress({ endpointURL: '/home' }));
+app.get('/graphiql', graphiqlExpress({ endpointURL: '/home' }));
 
 app.use((req, res, next) => {
-  next(utils.error(404, 'the url or method is unknown.'));
+  next(utils.error(404, 'verify', 'server system rejected the reaction'));
 });
 
 app.use((err, req, res, next) => {
-  log.error(`status: ${err.status}, error's message: ${err.message} `);
-  res.status(err.status || 500);
+  log.error(`code: ${err.code}, name: ${err.name}, message: ${err.message} `);
+  res.status(err.code || 500);
   res.set({
     'Content-Type': 'application/json'
   });

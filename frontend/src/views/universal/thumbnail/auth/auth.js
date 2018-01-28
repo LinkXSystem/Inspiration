@@ -1,58 +1,38 @@
 import React, { Component } from 'react';
-import { Modal } from '../../higher';
+import Proptypes from 'prop-types';
 
 import './thumbnail.css';
 
-class element extends Component {
+class Instance extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      display: 'none',
-      state: '',
-    };
-    this.modal = this.modal.bind(this);
     this.signin = this.signin.bind(this);
     this.signup = this.signup.bind(this);
   }
 
-  modal(state) {
-    const { display } = this.state;
-
-    this.setState({
-      display: display !== 'block' ? 'block' : 'none',
-      state: state,
-    });
-  }
-
   signin() {
+    const { modal, verify, signin } = this.props;
     return (
       <div className="th-auth">
         <div>
           <strong>登录</strong>
-          <i className="fa fa-times" aria-hidden="true" onClick={this.modal} />
+          <i className="fa fa-times" aria-hidden="true" onClick={modal} />
         </div>
         <form>
-          <input type="email" placeholder="邮箱" />
+          <input type="email" placeholder="邮箱" onChange={verify} />
           <input type="password" placeholder="密码" />
           <button>登陆</button>
         </form>
         <div>
           <span>
             没有账户？
-            <button
-              className="t-button"
-              onClick={() =>
-                this.setState({
-                  state: 'signup',
-                })
-              }
-            >
+            <button className="t-button" onClick={signin}>
               注册
             </button>
           </span>
-          <span>
+          <object>
             <a href="/password">忘记密码</a>
-          </span>
+          </object>
         </div>
         <p>第三方账号登陆 :</p>
         <ul className="r-ul">
@@ -71,14 +51,15 @@ class element extends Component {
   }
 
   signup() {
+    const { modal, verify, signup } = this.props;
     return (
       <div className="th-auth">
         <div>
           <strong>注册</strong>
-          <i className="fa fa-times" aria-hidden="true" onClick={this.modal} />
+          <i className="fa fa-times" aria-hidden="true" onClick={modal} />
         </div>
         <form>
-          <input type="email" placeholder="邮箱" />
+          <input type="email" placeholder="邮箱" onChange={verify} />
           <input type="password" placeholder="密码" />
           <input type="password" placeholder="校验" />
           <button>注册</button>
@@ -88,14 +69,7 @@ class element extends Component {
             justifyContent: 'center',
           }}
         >
-          <button
-            className="t-button"
-            onClick={() =>
-              this.setState({
-                state: 'signin',
-              })
-            }
-          >
+          <button className="t-button" onClick={signup}>
             已有账号登录
           </button>
         </div>
@@ -116,27 +90,17 @@ class element extends Component {
   }
 
   render() {
-    const { display, state } = this.state;
-    return (
-      <div>
-        <ul className="r-ul">
-          <li onClick={() => this.modal('signin')}>登录</li>
-          <li
-            onClick={() => this.modal('signup')}
-            style={{
-              borderLeft: '1px solid #b2b2b2',
-              paddingLeft: '0.5em',
-            }}
-          >
-            注册
-          </li>
-        </ul>
-        <Modal display={display} click={this.modal}>
-          {state !== 'signin' ? this.signup() : this.signin()}
-        </Modal>
-      </div>
-    );
+    const { state } = this.props;
+    return state !== 'signin' ? this.signup() : this.signin();
   }
 }
 
-export default element;
+Instance.propTypes = {
+  state: Proptypes.string.isRequired,
+  modal: Proptypes.func.isRequired,
+  verify: Proptypes.func.isRequired,
+  signin: Proptypes.func.isRequired,
+  signup: Proptypes.func.isRequired,
+};
+
+export default Instance;

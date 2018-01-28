@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const utils = require('../src/components/utils/error');
 const mongo = require('../src/components/mongoose');
+const utils = require('../src/utils/error');
 const redis = require('../src/components/redis');
 
 router.head('/', async (req, res, next) => {
@@ -10,13 +10,13 @@ router.head('/', async (req, res, next) => {
   const canvas = req.headers.canvas;
 
   if (!access && !canvas) {
-    return next(utils.error(400, 'information exception'));
+    return next(utils.error(400, 'verify', 'information is abnormal'));
   }
 
   const result = await mongo.Auth.getSecret(access);
 
   if (result.length === 0) {
-    return next(utils.error(400, 'information exception'));
+    return next(utils.error(400, 'verify', 'information is abnormal'));
   }
 
   const token = `inspiration ${result[0].secret} ${canvas}`;

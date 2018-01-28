@@ -24,7 +24,8 @@
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
     "passport-http-bearer": "^1.0.1",
-    "serve-favicon": "^2.4.5"
+    "serve-favicon": "^2.4.5",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "faker": "^4.1.0"

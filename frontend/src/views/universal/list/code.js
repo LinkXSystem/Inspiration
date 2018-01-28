@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { axios } from '../../../mock';
-// import builder from '../../../../utils';
 import './list.css';
-import { Repository } from '../element';
+import { Loading, Repository } from '../element';
 
 class Code extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      loading: true,
     };
     this.build = this.build.bind(this);
   }
@@ -28,6 +28,7 @@ class Code extends Component {
     });
     this.setState({
       data: res.data.items,
+      loading: false,
     });
   }
 
@@ -42,11 +43,15 @@ class Code extends Component {
           />
           <input type="text" />
         </div>
-        <div>
-          {this.state.data.map(item => (
-            <Repository key={item.name} data={item} />
-          ))}
-        </div>
+        {this.state.loading ? (
+          <Loading />
+        ) : (
+          <div>
+            {this.state.data.map(item => (
+              <Repository key={item.name} data={item} />
+            ))}
+          </div>
+        )}
       </div>
     );
   }

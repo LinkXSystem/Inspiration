@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import { UserThumbnail } from '../../views/universal/thumbnail';
+import { UserThumbnail } from '../views/universal/thumbnail';
 
 class User extends Component {
   constructor(props) {

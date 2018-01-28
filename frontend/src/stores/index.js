@@ -10,9 +10,20 @@ class RootStore {
 
   @observable auth = undefined;
 
+  @observable
+  alert = {
+    statu: false,
+    message: '系统正常',
+  };
+
   @action
   setAuth = auth => {
     this.auth = auth;
+  };
+
+  @action
+  setAlert = alert => {
+    this.alert = alert;
   };
 }
 

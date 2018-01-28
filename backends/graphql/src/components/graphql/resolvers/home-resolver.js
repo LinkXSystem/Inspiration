@@ -8,8 +8,10 @@ const getArticle = () => {
   };
 };
 
-const getBooks = async () => {
-  const data = await Mongo.Book.getBooks(3);
+const getBooks = async number => {
+  const data = await Mongo.Book.find({}, { _id: false, __v: false }).limit(
+    number
+  );
   return data;
 };
 
@@ -30,8 +32,8 @@ module.exports = {
     article() {
       return getArticle();
     },
-    books() {
-      return getBooks();
+    books(number) {
+      return getBooks(number);
     },
     design() {
       return getDesign();

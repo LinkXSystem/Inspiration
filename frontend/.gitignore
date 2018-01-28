@@ -9,10 +9,6 @@
 # production
 /build
 
-# npm run eject
-/config
-/scripts
-
 # misc
 .DS_Store
 .env.local

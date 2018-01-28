@@ -20,7 +20,8 @@
 .th-user > fieldset > legend {
   background-color: #ffffff;
   padding: 4px 4px;
-  width: auto;
+  width: 108px;
+  height: 108px;
   border-bottom: 0;
   border-radius: 4px;
   margin-bottom: 0px;

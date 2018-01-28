@@ -1,28 +1,26 @@
 import PropTyps from 'prop-types';
 import React from 'react';
-import { classname } from '../../../utils';
 
 import './element.css';
 
-function element(props) {
-  const { data } = props;
+function element({ data }) {
   return (
-    <div className={classname(['e-item'])}>
+    <div className="e-item">
       <div>
-        <strong className={classname(['t-line'])}>
+        <strong className="t-line">
           <a href={data.url}>{data.title}</a>
         </strong>
-        <ul className={classname(['r-ul'])}>
+        <ul className="r-ul">
           <li
-            className={classname(['t-icons'])}
+            className="t-icons"
             style={{
               backgroundColor: 'blue',
             }}
           >
-            {props.data.type}
+            {data.type}
           </li>
-          <li>{props.data.author}</li>
-          <li>{props.data.date}</li>
+          <li>{data.author}</li>
+          <li>{data.date}</li>
         </ul>
       </div>
       <strong>10</strong>

@@ -4,28 +4,24 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-// PropTypes
-import PropTypes from 'prop-types';
 // mobx
 import { observer } from 'mobx-react';
 import store from './stores';
 // component
-import Header from './layout/header/header';
-import Center from './layout/router/router';
-import Footer from './layout/footer/footer';
+import { Header, Router as Center, Footer } from './layout';
+import { Alert } from './views/universal/element';
 // data
 import { axios } from './mock';
 import { fingerprint } from './utils';
 
 @observer
 class App extends Component {
-  getChildContext() {
-    return {
-      store: store,
-    };
+  constructor(props) {
+    super(props);
+    this.init();
   }
 
-  async componentWillMount() {
+  async init() {
     const canvas = await fingerprint();
     const auth = await axios.grant(
       'http://localhost:8080/auth',
@@ -53,14 +49,11 @@ class App extends Component {
           />
           <Center />
           <Footer />
+          <Alert data={store.alert} />
         </div>
       </Router>
     );
   }
 }
-
-App.childContextTypes = {
-  store: PropTypes.object,
-};
 
 ReactDOM.render(<App />, document.getElementById('root'));

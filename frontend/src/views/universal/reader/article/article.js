@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTyps from 'prop-types';
 import { Item } from '../../element';
 
-class Wall extends Component {
+class Instance extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,8 +16,8 @@ class Wall extends Component {
   }
 }
 
-Wall.propTypes = {
+Instance.propTypes = {
   data: PropTyps.array.isRequired,
 };
 
-export default Wall;
+export default Instance;
