@@ -1,8 +1,23 @@
-const inspiration = 'mongodb://localhost:27017/inspiration';
+var url = 'mongodb://localhost:27017/admin';
 
-const inspiration = connect(inspiration);
+var admin = connect(url);
 
-const client = [
+admin.createUser({
+  user: 'root',
+  pwd: 'inspiration',
+  roles: [
+    {
+      role: 'userAdminAnyDatabase',
+      db: 'admin'
+    }
+  ]
+});
+
+url = 'mongodb://localhost:27017/inspiration';
+
+var inspiration = connect(url);
+
+var client = [
   {
     access: 'linksystem-inspiration',
     secret: '2018-linksystem'
@@ -10,11 +25,3 @@ const client = [
 ];
 
 inspiration.auths.insert(client);
-
-const authentication = 'mongodb://localhost:27017/admin';
-
-authentication.createUser({
-  user: 'root',
-  pwd: 'inspiration',
-  roles: [{ role: 'userAdminAnyDatabase', db: 'admin' }]
-});
