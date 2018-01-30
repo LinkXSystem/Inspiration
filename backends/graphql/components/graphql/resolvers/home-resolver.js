@@ -1,4 +1,4 @@
-const Mongo = require('../../mongoose');
+const Mongo = require('../../mongo');
 
 const getArticle = () => {
   return {

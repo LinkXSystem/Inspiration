@@ -1,8 +1,10 @@
+const config = require('../../config/system.json');
+
 const log = global.log4js.getLogger('mongoose');
 
 const mongoose = require('mongoose');
 
-const url = 'mongodb://localhost:27017/inspiration';
+const url = config.mongo.url;
 
 mongoose.Promise = global.Promise;
 
