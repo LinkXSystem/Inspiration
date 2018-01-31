@@ -1,10 +1,10 @@
-FROM mongo:latest
+FROM redis:latest
 
 LABEL author="linkasde_system@163.com"
 LABEL version="1.0.0"
-LABEL desecribe="mongodb's dockerfile"
+LABEL desecribe="redis's dockerfile"
 
-COPY init.js build.sh /
+COPY build.sh redis.conf /
 
 RUN chmod +x build.sh
 
