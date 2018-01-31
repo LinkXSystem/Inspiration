@@ -4,8 +4,8 @@ LABEL author="linkasde_system@163.com"
 LABEL version="1.0.0"
 LABEL desecribe="redis's dockerfile"
 
-COPY build.sh redis.conf /
+COPY redis.conf /
 
-RUN chmod +x build.sh
+WORKDIR /
 
-ENTRYPOINT [ "./build.sh" ]
+ENTRYPOINT [ "/usr/local/bin/redis-server", "redis.conf" ]
