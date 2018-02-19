@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './player.css';
-import { classname, musictime } from '../../../../utils/';
+import { musictime } from '../../../utils';
 
 class Instance extends Component {
   constructor(props) {
@@ -49,7 +48,7 @@ class Instance extends Component {
 
   render() {
     return (
-      <div className={classname(['t-container', 'audio'])}>
+      <div className="audio">
         <div className="song">
           <audio
             id="music-source"

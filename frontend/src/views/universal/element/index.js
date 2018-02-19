@@ -4,11 +4,12 @@ import Error from './error';
 import Evaluate from './evaluate';
 import Footnote from './footnote';
 import Image from './image';
+import Input from './input';
 import Item from './item';
 import Loading from './loading';
 import Repository from './repository';
 
-import './element.scss';
+import './style.scss';
 
 export {
   Alert,
@@ -17,6 +18,7 @@ export {
   Evaluate,
   Footnote,
   Image,
+  Input,
   Item,
   Loading,
   Repository,

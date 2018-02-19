@@ -1,5 +1,7 @@
+@import '../../styles/func.scss';
+
 /* alert */
-.link-alart {
+.alart {
   background-color: #000;
   position: fixed;
   z-index: 10000;
@@ -20,6 +22,7 @@
 
 // error
 .error {
+  @include container;
   height: 364px;
 }
 
@@ -51,17 +54,19 @@
 
 /* image */
 
-.e-image > img {
-  width: 182px;
-}
+.image {
+  img {
+    width: 182px;
+  }
 
-.e-image > div {
-  background-color: #eeeeee;
-  width: 182px;
-  padding: 4px 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  div {
+    background-color: #eeeeee;
+    width: 182px;
+    padding: 4px 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /* item */
@@ -69,35 +74,45 @@
   border-top: 1px solid #f4f5f6;
 }
 
-.e-item {
+.item {
   padding: 10px 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-.e-item > div:nth-of-type(1) {
-  height: 45px;
-}
 
-.e-item > div:nth-of-type(1) > strong {
-  font-size: 1.25em;
-}
+  div {
+    display: block;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.e-item > div:nth-of-type(1) > ul > li + li {
-  margin-left: 0.5em;
-}
+    h4 {
+      font-weight: bold;
+      font-size: 1.25em;
+    }
 
-.e-item > strong {
-  border-radius: 4px;
-  text-align: center;
-  line-height: 45px;
-  color: #eeeeee;
-  width: 45px;
-  background-color: #007fff;
+    ul {
+      @include ul;
+
+      li + li {
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  strong {
+    border-radius: 4px;
+    text-align: center;
+    line-height: 45px;
+    color: #eeeeee;
+    width: 45px;
+    background-color: #007fff;
+  }
 }
 
 /* loading */
-.link-loading {
+.loading {
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -105,8 +120,7 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* repository */
-
+// repository
 .repository {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
@@ -140,6 +154,10 @@
     flex: 1;
     text-indent: 2em;
     border-bottom: 1px solid #eeeeee;
+  }
+
+  ul {
+    @include ul;
   }
 }
 

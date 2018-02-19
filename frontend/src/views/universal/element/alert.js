@@ -3,7 +3,7 @@ import React from 'react';
 
 const element = ({ data }) => (
   <div
-    className="link-alart"
+    className="alart"
     style={{
       right: data.statu ? '0px' : '-250px',
     }}

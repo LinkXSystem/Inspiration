@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './thumbnail.css';
 
 class Instance extends Component {
   constructor(props) {
@@ -9,7 +8,7 @@ class Instance extends Component {
 
   render() {
     return (
-      <div className="th-user">
+      <div className="user-thumbnail">
         <div
           style={{
             backgroundImage:
@@ -36,7 +35,7 @@ class Instance extends Component {
           </ul>
           <div className="fieldset-info">
             <div>
-              <ul className="r-ul">
+              <ul>
                 <li>
                   <h3>LinkSystem</h3>
                 </li>

@@ -5,7 +5,7 @@ const element = () => {
   const img = require('../../public/svgs/loding.svg');
   /* eslint-disable global-require */
   return (
-    <div className="link-loading">
+    <div className="loading">
       <img src={img} alt="" />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 
-import './thumbnail.scss';
+import './style.scss';
 
 class Instance extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Instance extends Component {
           </object>
         </div>
         <p>第三方账号登陆 :</p>
-        <ul className="r-ul">
+        <ul>
           <li>
             <i className="inspiration-weibo" aria-hidden="true" />
           </li>
@@ -86,7 +86,7 @@ class Instance extends Component {
           </button>
         </div>
         <p>第三方账号登陆 :</p>
-        <ul className="r-ul">
+        <ul>
           <li>
             <i className="inspiration-weibo" aria-hidden="true" />
           </li>

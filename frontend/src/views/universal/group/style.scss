@@ -1,3 +1,5 @@
+@import '../../styles/func.scss';
+
 /* article */
 .article-list {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -11,15 +13,23 @@
     justify-content: space-between;
     align-items: center;
 
-    ul > li {
-      padding: 0em 0.5em;
-      font-size: 1em;
-      color: #b2b2b2;
-    }
+    ul {
+      @include ul;
 
-    ul > li + li {
-      border-left: 1px solid #b2b2b2;
+      li {
+        padding: 0em 0.5em;
+        font-size: 1em;
+        color: #b2b2b2;
+      }
+
+      li + li {
+        border-left: 1px solid #b2b2b2;
+      }
     }
+  }
+
+  div + div {
+    border-top: 1px solid #f4f5f6;
   }
 
   footer {

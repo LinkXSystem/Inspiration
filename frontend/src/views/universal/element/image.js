@@ -2,7 +2,7 @@ import PropTyps from 'prop-types';
 import React from 'react';
 
 const element = ({ data }) => (
-  <div className="e-image">
+  <div className="image">
     <img src={data.img} alt="" />
     <div>
       <span>

@@ -48,7 +48,7 @@ class Auth extends Component {
     const { display, state } = this.state;
     return (
       <div>
-        <ul className="r-ul">
+        <ul className="ul">
           <li onClick={() => this.modal('signin')}>登录</li>
           <li
             onClick={() => this.modal('signup')}

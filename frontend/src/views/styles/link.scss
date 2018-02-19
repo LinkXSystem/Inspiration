@@ -1,0 +1,9 @@
+@import './func.scss';
+
+.ul {
+  @include ul;
+
+  li + li {
+    margin-left: 0.5em;
+  }
+}

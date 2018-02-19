@@ -12,7 +12,7 @@ import Directive from '../views/universal/directive/directive';
 
 import { ActionCarousel } from '../views/universal/carousel';
 import { BookAdvert } from '../views/universal/advert';
-import { Error } from '../views/universal/element';
+import { Error, Input } from '../views/universal/element';
 import { DesignThumbnail } from '../views/universal/thumbnail';
 
 import { ArticleList, BookList, CodeList } from '../views/universal/group';
@@ -73,6 +73,12 @@ class Home extends Component {
           <Col md={3}>
             <Row>
               <Col sm={12}>
+                <Input
+                  change={dom => {
+                    console.log(dom);
+                  }}
+                  delay={2000}
+                />
                 <Music />
                 <Directive />
               </Col>

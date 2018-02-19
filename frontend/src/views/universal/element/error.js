@@ -1,7 +1,6 @@
 // import PropTyps from 'prop-types';
 import React from 'react';
-import { classname } from '../../../utils';
 
-const element = () => <div className={classname(['t-container', 'error'])} />;
+const element = () => <div className="error" />;
 
 export default element;

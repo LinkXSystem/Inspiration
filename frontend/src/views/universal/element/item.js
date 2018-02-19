@@ -3,12 +3,12 @@ import React from 'react';
 
 function element({ data }) {
   return (
-    <div className="e-item">
+    <div className="item">
       <div>
-        <strong className="t-line">
+        <h4 className="t-line">
           <a href={data.url}>{data.title}</a>
-        </strong>
-        <ul className="r-ul">
+        </h4>
+        <ul>
           <li
             className="t-icons"
             style={{
