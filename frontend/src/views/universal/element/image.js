@@ -1,8 +1,6 @@
 import PropTyps from 'prop-types';
 import React from 'react';
 
-import './element.css';
-
 const element = ({ data }) => (
   <div className="e-image">
     <img src={data.img} alt="" />

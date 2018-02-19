@@ -11,10 +11,11 @@ import { Music } from '../views/universal/player';
 import Directive from '../views/universal/directive/directive';
 
 import { ActionCarousel } from '../views/universal/carousel';
+import { BookAdvert } from '../views/universal/advert';
 import { Error } from '../views/universal/element';
 import { DesignThumbnail } from '../views/universal/thumbnail';
 
-import { ArticleList, BookList, CodeList } from '../views/universal/list';
+import { ArticleList, BookList, CodeList } from '../views/universal/group';
 
 @observer
 class Home extends Component {
@@ -33,8 +34,22 @@ class Home extends Component {
             <Row>
               <Col sm={12}>
                 <ActionCarousel time={10000}>
-                  <div>test</div>
-                  <div>test</div>
+                  <BookAdvert
+                    data={{
+                      img: 'https://img1.doubanio.com/lpic/s29679627.jpg',
+                      url: 'https://book.douban.com/subject/27200268/',
+                      name: '知日·世上只有一个京都',
+                      author: '茶乌龙 主编',
+                    }}
+                  />
+                  <BookAdvert
+                    data={{
+                      img: 'https://img1.doubanio.com/lpic/s29679627.jpg',
+                      url: 'https://book.douban.com/subject/27200268/',
+                      name: '知日·世上只有一个京都',
+                      author: '茶乌龙 主编',
+                    }}
+                  />
                 </ActionCarousel>
               </Col>
               <Col sm={12}>

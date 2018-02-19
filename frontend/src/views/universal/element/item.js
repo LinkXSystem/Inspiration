@@ -1,8 +1,6 @@
 import PropTyps from 'prop-types';
 import React from 'react';
 
-import './element.css';
-
 function element({ data }) {
   return (
     <div className="e-item">

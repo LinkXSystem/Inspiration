@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 
-import './thumbnail.css';
+import './thumbnail.scss';
 
 class Instance extends Component {
   constructor(props) {
@@ -11,17 +11,23 @@ class Instance extends Component {
   }
 
   signin() {
-    const { modal, verify, signin } = this.props;
+    const { modal, verify, signin, submit } = this.props;
     return (
-      <div className="th-auth">
-        <div>
+      <section className="auth-thumbnail">
+        <header>
           <strong>登录</strong>
           <i className="fa fa-times" aria-hidden="true" onClick={modal} />
-        </div>
+        </header>
         <form>
           <input type="email" placeholder="邮箱" onChange={verify} />
           <input type="password" placeholder="密码" />
-          <button>登陆</button>
+          <button
+            onClick={() => {
+              submit('xxx');
+            }}
+          >
+            登陆
+          </button>
         </form>
         <div>
           <span>
@@ -37,32 +43,38 @@ class Instance extends Component {
         <p>第三方账号登陆 :</p>
         <ul className="r-ul">
           <li>
-            <i className="fa fa-github" aria-hidden="true" />
+            <i className="inspiration-weibo" aria-hidden="true" />
           </li>
           <li>
-            <i className="fa fa-weixin" aria-hidden="true" />
+            <i className="inspiration-wechat" aria-hidden="true" />
           </li>
           <li>
-            <i className="fa fa-globe" aria-hidden="true" />
+            <i className="inspiration-github" aria-hidden="true" />
           </li>
         </ul>
-      </div>
+      </section>
     );
   }
 
   signup() {
-    const { modal, verify, signup } = this.props;
+    const { modal, verify, signup, submit } = this.props;
     return (
-      <div className="th-auth">
-        <div>
+      <section className="auth-thumbnail">
+        <header>
           <strong>注册</strong>
           <i className="fa fa-times" aria-hidden="true" onClick={modal} />
-        </div>
+        </header>
         <form>
           <input type="email" placeholder="邮箱" onChange={verify} />
           <input type="password" placeholder="密码" />
-          <input type="password" placeholder="校验" />
-          <button>注册</button>
+          <input type="password" placeholder="重复密码" />
+          <button
+            onClick={() => {
+              submit('xxx');
+            }}
+          >
+            注册
+          </button>
         </form>
         <div
           style={{
@@ -76,16 +88,16 @@ class Instance extends Component {
         <p>第三方账号登陆 :</p>
         <ul className="r-ul">
           <li>
-            <i className="fa fa-github" aria-hidden="true" />
+            <i className="inspiration-weibo" aria-hidden="true" />
           </li>
           <li>
-            <i className="fa fa-weixin" aria-hidden="true" />
+            <i className="inspiration-wechat" aria-hidden="true" />
           </li>
           <li>
-            <i className="fa fa-globe" aria-hidden="true" />
+            <i className="inspiration-github" aria-hidden="true" />
           </li>
         </ul>
-      </div>
+      </section>
     );
   }
 
@@ -101,6 +113,7 @@ Instance.propTypes = {
   verify: Proptypes.func.isRequired,
   signin: Proptypes.func.isRequired,
   signup: Proptypes.func.isRequired,
+  submit: Proptypes.func.isRequired,
 };
 
 export default Instance;

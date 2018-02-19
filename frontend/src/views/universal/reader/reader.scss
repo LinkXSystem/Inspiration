@@ -1,0 +1,48 @@
+.project {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  padding: 4px 4px;
+  height: 536px;
+  overflow: hidden;
+  overflow-y: auto;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 30px;
+      }
+
+      h4 {
+        display: inline-block;
+        white-space: nowrap;
+        line-height: 1.2em;
+        margin-left: 0.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    span {
+      font-size: 2em;
+    }
+  }
+
+  .sight {
+    span {
+      display: inline-block;
+      height: 8px;
+    }
+
+    .empty {
+      width: 100%;
+      background-color: #b2b2b2;
+    }
+  }
+}

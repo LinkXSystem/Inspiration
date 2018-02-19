@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BookThumbnail } from '../thumbnail';
-
-import './list.css';
 
 class Instance extends Component {
   constructor(props) {
@@ -11,17 +8,19 @@ class Instance extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { component: Entity, data, name } = this.props;
     return (
-      <div className="l-book">
-        {data.map(item => <BookThumbnail key={item.name} data={item} />)}
+      <div className={name}>
+        {data.map((item, index) => <Entity key={index} data={item} />)}
       </div>
     );
   }
 }
 
 Instance.propTypes = {
-  data: PropTypes.object.isRequired,
+  component: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Instance;

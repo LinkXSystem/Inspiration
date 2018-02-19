@@ -40,6 +40,10 @@ class Auth extends Component {
     }
   }
 
+  submit(data) {
+    console.log(data);
+  }
+
   render() {
     const { display, state } = this.state;
     return (
@@ -56,11 +60,22 @@ class Auth extends Component {
             注册
           </li>
         </ul>
-        <Modal display={display} click={this.modal}>
+        <Modal
+          display={display}
+          click={() =>
+            this.setState({
+              display: 'none',
+            })
+          }
+        >
           <AuthThumbnail
             verify={this.verify}
             state={state}
-            click={this.modal}
+            modal={() =>
+              this.setState({
+                display: 'none',
+              })
+            }
             signin={() =>
               this.setState({
                 state: 'signup',
@@ -71,6 +86,7 @@ class Auth extends Component {
                 state: 'signin',
               })
             }
+            submit={this.submit}
           />
         </Modal>
       </div>

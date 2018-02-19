@@ -2,10 +2,8 @@ import PropTyps from 'prop-types';
 import React from 'react';
 import moment from 'moment';
 
-import './element.css';
-
 const element = ({ data }) => (
-  <div className="e-repository">
+  <div className="repository">
     <div>
       <img src={data.owner.avatar_url} alt="" />
       <h4>

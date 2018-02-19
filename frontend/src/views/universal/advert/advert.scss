@@ -1,0 +1,83 @@
+.book-advert {
+  padding: 4px 4px;
+  width: 450px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top: 4px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    content: '';
+    background-color: #ffffff;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    bottom: 4px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    content: '';
+    background-color: #ffffff;
+  }
+
+  .advert {
+    border: 5px solid #b2b2b2;
+    border-radius: 10px;
+    height: 182px;
+    padding: 4px 4px;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      position: absolute;
+      display: block;
+      width: 5px;
+      top: 10%;
+      left: -5px;
+      height: 80%;
+      content: '';
+      background-color: #ffffff;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      top: 10%;
+      right: -5px;
+      height: 80%;
+      width: 5px;
+      content: '';
+      background-color: #ffffff;
+    }
+
+    img {
+      width: 115px;
+    }
+
+    section {
+      background-image: url('../../public/imgs/book-advert.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h3,
+      h4 {
+        font-weight: bold;
+        margin-top: 10px !important;
+      }
+    }
+  }
+}

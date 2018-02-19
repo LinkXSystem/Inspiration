@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Item } from '../element';
+import footer from '../../../layout/footer';
 
 class Instance extends Component {
   constructor(props) {
@@ -66,8 +67,8 @@ class Instance extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="l-article">
-        <div>
+      <section className="article-list">
+        <header>
           <ul className="r-ul">
             <li>热门</li>
             <li>最新</li>
@@ -77,12 +78,12 @@ class Instance extends Component {
             <li>本月最热</li>
             <li>历史最热</li>
           </ul>
-        </div>
+        </header>
         <div>{data.map(item => <Item key={item.title} data={item} />)}</div>
-        <div>
+        <footer>
           <i className="fa fa-globe" aria-hidden="true" /> ヽ(✿ﾟ▽ﾟ)ノ
-        </div>
-      </div>
+        </footer>
+      </section>
     );
   }
 }

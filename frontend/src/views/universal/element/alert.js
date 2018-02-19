@@ -1,7 +1,5 @@
-import React from 'react';
 import PropTyps from 'prop-types';
-
-import './element.css';
+import React from 'react';
 
 const element = ({ data }) => (
   <div

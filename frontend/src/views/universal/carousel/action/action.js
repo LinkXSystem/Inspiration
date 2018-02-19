@@ -36,9 +36,12 @@ class Instance extends Component {
     this.clock = setInterval(this.rollup, time);
   }
 
-  update(dom) {
-    const real = dom.target;
-    real.style['z-index'] = this.state.core + 1;
+  update(target) {
+    if (!target) return;
+
+    const { style } = target;
+
+    style['z-index'] = this.state.core + 1;
     this.setState({
       core: this.state.core + 1,
     });
@@ -67,13 +70,7 @@ class Instance extends Component {
         }}
       >
         {children.map((item, index) => (
-          <Drag
-            key={index}
-            type="runout"
-            click={dom => {
-              this.update(dom);
-            }}
-          >
+          <Drag key={index} type="runout" click={this.update}>
             {item}
           </Drag>
         ))}

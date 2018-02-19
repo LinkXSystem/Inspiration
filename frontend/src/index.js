@@ -14,6 +14,8 @@ import { Alert } from './views/universal/element';
 import { axios } from './mock';
 import { fingerprint } from './utils';
 
+import './views/styles/globe.scss';
+
 @observer
 class App extends Component {
   constructor(props) {

@@ -99,6 +99,10 @@ a:hover {
   justify-content: flex-start;
 }
 
+.r-ul > li {
+  flex: 1;
+}
+
 .r-ul > li + li {
   margin-left: 0.5em;
 }
@@ -109,7 +113,6 @@ a:hover {
   /* border: 1px solid #b2b2b2; */
   background-color: #ffffff;
   padding: 4px 4px;
-  border-radius: 4px;
 }
 
 .t-title {
@@ -157,6 +160,7 @@ a:hover {
   }
 
   .nav {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

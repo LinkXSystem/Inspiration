@@ -21,7 +21,6 @@ class Instance extends Component {
     const { display } = this.state;
     return (
       <div
-        className="t-container"
         ref={item => {
           this.modal = item;
         }}
@@ -33,7 +32,7 @@ class Instance extends Component {
           left: '0',
           top: '0',
           display: display,
-          backgroundColor: 'rgba(170, 171, 171, 0.5)',
+          backgroundColor: 'rgba(255, 255, 255, 0)',
         }}
       >
         <div

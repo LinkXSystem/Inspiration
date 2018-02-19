@@ -13,6 +13,7 @@ class Instance extends Component {
     this.build = this.build.bind(this);
     this.down = this.down.bind(this);
     this.stop = this.stop.bind(this);
+    this.move = this.move.bind(this);
     this.random = this.random.bind(this);
     this.runout = this.runout.bind(this);
     this.wrapup = this.wrapup.bind(this);
@@ -142,11 +143,13 @@ class Instance extends Component {
         ref={item => {
           this.darg = item;
         }}
-        onClick={dom => click(dom)}
+        onClick={() => {
+          click(this.darg);
+        }}
         onMouseDown={this.down}
         onMouseUp={this.stop}
+        onMouseMove={this.move}
         onMouseLeave={this.stop}
-        onMouseMove={dom => this.move(dom)}
       >
         {children}
       </div>
@@ -156,7 +159,7 @@ class Instance extends Component {
 
 Instance.propTypes = {
   children: PropTypes.any.isRequired,
-  click: PropTypes.func.isRequired,
+  // click: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
 };
 

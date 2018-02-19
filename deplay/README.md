@@ -13,7 +13,7 @@ git checkout origin/deplay
 * jenkins：jenkins 的 CI/CD 脚本
 * backends: 基础设施的 Dockerfile 和 服务器的 Dockerfile
 
-> jenkinks
+> jenkinks 部署
 
 ```
 mkdir /jenkins/
@@ -27,3 +27,8 @@ docker run -d  \
   -v /jenkins/:/home \
   jenkinsci/blueocean
 ```
+
+> jenkins 说明
+
+* 对于每个远程分支来说，Jenkinsfile 是不一样的
+* 对于 master 而言， 部署的流程还未能确定 

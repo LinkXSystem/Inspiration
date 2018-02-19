@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { axios } from '../../../mock';
-import './list.css';
-import { Loading, Repository } from '../element';
+import { Repository } from '../element';
+import { Load, List } from '../higher';
 
 class Code extends Component {
   constructor(props) {
@@ -44,12 +44,10 @@ class Code extends Component {
           <input type="text" />
         </div>
         {this.state.loading ? (
-          <Loading />
+          <Load width="100%" height="480px" />
         ) : (
           <div>
-            {this.state.data.map(item => (
-              <Repository key={item.name} data={item} />
-            ))}
+            <List name="" data={this.state.data} component={Repository} />
           </div>
         )}
       </div>

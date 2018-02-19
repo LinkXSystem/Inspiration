@@ -4,4 +4,4 @@
 build/*
 
 # Ignore config files
-webpack.config.js
+/config/*
