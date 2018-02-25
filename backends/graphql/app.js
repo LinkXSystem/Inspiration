@@ -3,13 +3,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { graphiqlExpress } = require('apollo-server-express');
 
-const utils = require('./src/utils/error');
+const utils = require('./components/utils/error');
 
 const auth = require('./routes/authorize');
 const home = require('./routes/home');
 const user = require('./routes/user');
 
-const interceptor = require('./src/utils/interceptor');
+const interceptor = require('./components/middleware/interceptor');
 
 const app = new express();
 

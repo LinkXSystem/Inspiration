@@ -1,11 +1,9 @@
-import React from 'react';
 import PropTyps from 'prop-types';
-
-import './element.css';
+import React from 'react';
 
 const element = ({ data }) => (
   <div
-    className="link-alart"
+    className="alart"
     style={{
       right: data.statu ? '0px' : '-250px',
     }}

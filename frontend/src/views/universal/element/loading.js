@@ -1,13 +1,11 @@
 import React from 'react';
 
-import './element.css';
-
 const element = () => {
   /* eslint-disable global-require */
-  const img = require('../../public/imgs/animation.png');
+  const img = require('../../public/svgs/loding.svg');
   /* eslint-disable global-require */
   return (
-    <div className="link-loading">
+    <div className="loading">
       <img src={img} alt="" />
     </div>
   );

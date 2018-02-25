@@ -1,4 +1,7 @@
-import Music from './music-player/music';
-import Video from './video-player/video';
+import Music from './music';
+import Video from './video';
+import Image from './image';
 
-export { Music, Video };
+import './style.scss';
+
+export { Music, Video, Image };

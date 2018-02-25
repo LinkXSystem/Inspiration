@@ -1,16 +1,10 @@
 import PropTyps from 'prop-types';
 import React from 'react';
 
-import './element.css';
-
 const element = ({ data }) => (
-  <div className="e-image">
+  <div className="image">
     <img src={data.img} alt="" />
-    <div>
-      <span>
-        <i className="fa fa-file-text" aria-hidden="true" /> {data.info}
-      </span>
-    </div>
+    <span>{data.info}</span>
   </div>
 );
 

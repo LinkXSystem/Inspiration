@@ -1,7 +1,27 @@
+import { Route, Redirect } from 'react-router-dom';
 import React from 'react';
-import { Route } from 'react-router-dom';
 
-import { Home, Book, Code, Design, User } from '../page';
+import { observer } from 'mobx-react';
+import store from '../stores';
+
+import { Home, Book, Code, Design, User, Writer, Article } from '../page';
+
+const PrivateRoute = observer(({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      store.user ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/',
+          }}
+        />
+      )
+    }
+  />
+));
 
 const Router = () => (
   <div>
@@ -10,6 +30,8 @@ const Router = () => (
     <Route path="/code" component={Code} />
     <Route path="/user" component={User} />
     <Route path="/design" component={Design} />
+    <PrivateRoute path="/writer" component={Writer} />
+    <Route path="/article" component={Article} />
   </div>
 );
 

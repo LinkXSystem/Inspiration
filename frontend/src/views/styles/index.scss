@@ -1,0 +1,55 @@
+@import './bootstrap.scss';
+@import './func.scss';
+@import './link.scss';
+@import './mark.scss';
+@import './reset.scss';
+@import './variable.scss';
+
+.user > a {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.user > a > img {
+  width: 30px;
+  height: 30px;
+}
+
+.t-title {
+  font-size: 1.5em;
+}
+
+.t-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.t-icons {
+  text-align: center;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 0.75em;
+  padding: 0.1em 0.5em;
+  border-radius: 4px;
+}
+
+.t-icons + .t-icons {
+  margin-left: 0.5em;
+}
+
+.t-button {
+  background-color: #ffffff;
+  border: 0px;
+  padding: 0px;
+  color: #337ab7;
+}
+
+.t-button {
+  outline: 0px;
+}
+
+.footer > .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}

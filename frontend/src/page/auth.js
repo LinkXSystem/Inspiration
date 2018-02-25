@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import store from '../stores';
+// import store from '../stores';
 import { Modal } from '../views/universal/higher';
 import { AuthThumbnail } from '../views/universal/thumbnail';
 
@@ -24,27 +24,31 @@ class Auth extends Component {
     });
   }
 
-  verify(dom) {
-    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
-    const { value } = dom.target;
-    if (!value.match(regex)) {
-      store.setAlert({
-        statu: true,
-        message: '邮箱格式错误',
-      });
-    } else {
-      store.setAlert({
-        statu: false,
-        message: '邮箱格式正确',
-      });
-    }
+  // verify(dom) {
+  //   const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  //   const { value } = dom.target;
+  //   if (!value.match(regex)) {
+  //     store.setAlert({
+  //       statu: true,
+  //       message: '邮箱格式错误',
+  //     });
+  //   } else {
+  //     store.setAlert({
+  //       statu: false,
+  //       message: '邮箱格式正确',
+  //     });
+  //   }
+  // }
+
+  submit(data) {
+    console.log(data);
   }
 
   render() {
     const { display, state } = this.state;
     return (
       <div>
-        <ul className="r-ul">
+        <ul className="ul">
           <li onClick={() => this.modal('signin')}>登录</li>
           <li
             onClick={() => this.modal('signup')}
@@ -56,11 +60,21 @@ class Auth extends Component {
             注册
           </li>
         </ul>
-        <Modal display={display} click={this.modal}>
+        <Modal
+          display={display}
+          click={() =>
+            this.setState({
+              display: 'none',
+            })
+          }
+        >
           <AuthThumbnail
-            verify={this.verify}
             state={state}
-            click={this.modal}
+            modal={() =>
+              this.setState({
+                display: 'none',
+              })
+            }
             signin={() =>
               this.setState({
                 state: 'signup',
@@ -71,6 +85,7 @@ class Auth extends Component {
                 state: 'signin',
               })
             }
+            submit={this.submit}
           />
         </Modal>
       </div>

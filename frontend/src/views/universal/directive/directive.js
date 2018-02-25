@@ -10,7 +10,9 @@ class Directive extends Component {
   render() {
     return (
       <div className="directive">
-        <h5>Controler</h5>
+        <h5>
+          <i className="inspiration-terminal" aria-hidden="true" /> Controler
+        </h5>
         <div className="directive-enters" />
       </div>
     );

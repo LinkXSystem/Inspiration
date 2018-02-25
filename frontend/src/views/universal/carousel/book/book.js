@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import './carousel.css';
+
+import { Assiant } from '../../higher';
 
 class Instance extends Component {
   constructor(props) {
@@ -41,9 +44,9 @@ class Instance extends Component {
     clearInterval(this.clock);
   }
 
-  update(dom) {
+  update(target) {
     const { core, transfrom } = this.state;
-    const element = dom.target;
+    const element = target;
     const index = parseInt(element.getAttribute('sign'), 10);
     if (index === core) return;
     const { length } = transfrom;
@@ -83,16 +86,14 @@ class Instance extends Component {
         ref={item => {
           this.carousel = item;
         }}
-        className="c-book"
+        className="c-book t-container"
       >
         {' '}
-        {children.map((item, i) =>
-          React.cloneElement(item, {
-            key: i,
-            onClick: this.update,
-            sign: i,
-          }),
-        )}{' '}
+        {children.map((item, i) => (
+          <Assiant key={i} sign={i} click={this.update}>
+            {item}
+          </Assiant>
+        ))}{' '}
       </div>
     );
   }

@@ -1,13 +1,8 @@
-import ArticleThumbnail from './article/article';
-import AuthThumbnail from './auth/auth';
+import AuthThumbnail from './auth';
 import BookThumbnail from './book/book';
-import UserThumbnail from './user/user';
-import DesignThumbnail from './design/design';
+import UserThumbnail from './user';
+import DesignThumbnail from './design';
 
-export {
-  ArticleThumbnail,
-  AuthThumbnail,
-  BookThumbnail,
-  UserThumbnail,
-  DesignThumbnail,
-};
+import './style.scss';
+
+export { AuthThumbnail, BookThumbnail, UserThumbnail, DesignThumbnail };

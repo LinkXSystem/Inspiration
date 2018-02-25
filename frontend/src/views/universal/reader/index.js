@@ -1,3 +1,6 @@
-import ArticleReader from './article/article';
+import ArticleReader from './article';
+import ProjectReader from './project';
 
-export { ArticleReader };
+import './reader.scss';
+
+export { ArticleReader, ProjectReader };

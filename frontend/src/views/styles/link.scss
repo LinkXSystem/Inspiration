@@ -1,0 +1,41 @@
+@import './func.scss';
+
+.ul {
+  @include ul;
+
+  li + li {
+    margin-left: 0.5em;
+  }
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
+.affix {
+  background-color: #007fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 500;
+  bottom: 2em;
+  right: 2em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.5em;
+  color: #ffffff;
+
+  i {
+    transition: all 0.5s ease-in-out;
+  }
+
+  i:hover {
+    transform: rotate(45deg);
+  }
+}

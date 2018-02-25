@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+// mobx
+import { observer } from 'mobx-react';
+import store from '../stores';
+
 import Directive from '../views/universal/directive/directive';
 
-import { ArticleList, CodeList } from '../views/universal/list';
+import { ArticleList, CodeList } from '../views/universal/group';
+import { ProjectReader } from '../views/universal/reader';
 
+@observer
 class Coder extends Component {
   constructor(props) {
     super(props);
@@ -15,24 +21,18 @@ class Coder extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col sm={8}>
+          <Col md={9}>
             <Row>
-              <Col sm={12}>
+              <Col md={12}>
                 <Directive />
               </Col>
-              <Col sm={12}>
-                <blockquote>热门推荐</blockquote>
-              </Col>
-              <Col sm={5}>
+              <Col md={5}>
                 <CodeList />
               </Col>
-              {/* <Col sm={8}>
-                <Article />
-              </Col> */}
-              <Col sm={12}>
-                <blockquote>实践文章</blockquote>
+              <Col md={7}>
+                <ProjectReader data={store.code.repository} />
               </Col>
-              <Col sm={12}>
+              <Col md={12}>
                 <ArticleList />
               </Col>
             </Row>
