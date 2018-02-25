@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
-import marked from 'marked';
-import './editor.scss';
-
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false,
-  xhtml: false,
-});
+import { Markdown } from '../higher';
 
 class Instaner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      context: {
-        __html: marked(''),
-      },
+      context: '',
       read: true,
     };
     this.update = this.update.bind(this);
@@ -29,9 +14,7 @@ class Instaner extends Component {
 
   update(dom) {
     this.setState({
-      context: {
-        __html: marked(dom.target.value),
-      },
+      context: dom.target.value,
     });
   }
 
@@ -43,9 +26,9 @@ class Instaner extends Component {
 
   render() {
     return (
-      <div className="markdown">
+      <div className="markdown-editor">
         <div className="editor">
-          <ul className="r-ul">
+          <ul>
             <li>
               <i className="inspiration-bold" aria-hidden="true" />
             </li>
@@ -62,7 +45,7 @@ class Instaner extends Component {
               <i className="inspiration-bookmark" aria-hidden="true" />
             </li>
           </ul>
-          <ul className="r-ul">
+          <ul>
             <li>
               <i
                 className="inspiration-columns"
@@ -84,10 +67,7 @@ class Instaner extends Component {
             width: this.state.read ? '50%' : '100%',
           }}
         />
-        <div
-          className={this.state.read ? 'content' : 'content hidden'}
-          dangerouslySetInnerHTML={this.state.context}
-        />
+        <Markdown data={this.state.context} />
         <hr />
       </div>
     );

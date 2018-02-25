@@ -4,11 +4,7 @@ import React from 'react';
 const element = ({ data }) => (
   <div className="image">
     <img src={data.img} alt="" />
-    <div>
-      <span>
-        <i className="fa fa-file-text" aria-hidden="true" /> {data.info}
-      </span>
-    </div>
+    <span>{data.info}</span>
   </div>
 );
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './thumbnail.css';
 
 class Design extends Component {
   constructor(props) {
@@ -9,16 +8,15 @@ class Design extends Component {
 
   render() {
     return (
-      <div className="image">
-        <div className="description">
-          <h4>在海上冲浪的人，如风中晓燕！</h4>
-        </div>
+      <div
+        className="design-thumbnail"
+        style={{
+          backgroundImage:
+            'url(https://hbimg.b0.upaiyun.com/fa263e2d38d4438684807f8217dd5d56b45528682a1e4d-vqSn16)',
+        }}
+      >
         <div className="works">
           <ul>
-            <li>
-              <i className="fa fa-user-circle" aria-hidden="true" />
-              <span>LinkSystem</span>
-            </li>
             <li>
               <i className="fa fa-info-circle" aria-hidden="true" />
               <span>LinkSystem & 灵感</span>
@@ -26,10 +24,6 @@ class Design extends Component {
             <li>
               <i className="fa fa-fire" aria-hidden="true" />
               <span>恒之泳</span>
-            </li>
-            <li>
-              <i className="fa fa-calendar" aria-hidden="true" />
-              <span>2017-12-15</span>
             </li>
           </ul>
         </div>

@@ -10,6 +10,7 @@ import store from './stores';
 // component
 import { Header, Router as Center, Footer } from './layout';
 import { Alert } from './views/universal/element';
+import { Affix } from './views/universal/higher';
 // data
 import { axios } from './mock';
 import { fingerprint } from './utils';
@@ -25,15 +26,22 @@ class App extends Component {
 
   async init() {
     const canvas = await fingerprint();
-    const auth = await axios.grant(
-      'http://localhost:8080/auth',
-      {
-        access: 'linksystem-inspiration',
-        canvas: canvas,
-      },
-      'x-auth-token',
-    );
-    store.setAuth(auth);
+    try {
+      const auth = await axios.grant(
+        'http://localhost:2017/auth',
+        {
+          access: 'linksystem-inspiration',
+          canvas: canvas,
+        },
+        'x-auth-token',
+      );
+      store.setAuth(auth);
+    } catch (e) {
+      store.setAlert({
+        statu: true,
+        message: '网络请求无效',
+      });
+    }
   }
 
   render() {
@@ -52,6 +60,7 @@ class App extends Component {
           <Center />
           <Footer />
           <Alert data={store.alert} />
+          <Affix />
         </div>
       </Router>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const info = () => (
-  <div className="meta">
+  <div className="metadata">
     <div className="title">
       <i className="inspiration-title" aria-hidden="true" />
       <input type="text" placeholder="标题" />

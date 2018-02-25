@@ -1,4 +1,4 @@
-import ArticleReader from './article/article';
+import ArticleReader from './article';
 import ProjectReader from './project';
 
 import './reader.scss';

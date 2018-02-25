@@ -4,7 +4,7 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import store from '../stores';
 
-import { Home, Book, Code, Design, User, Writer } from '../page';
+import { Home, Book, Code, Design, User, Writer, Article } from '../page';
 
 const PrivateRoute = observer(({ component: Component, ...rest }) => (
   <Route
@@ -31,6 +31,7 @@ const Router = () => (
     <Route path="/user" component={User} />
     <Route path="/design" component={Design} />
     <PrivateRoute path="/writer" component={Writer} />
+    <Route path="/article" component={Article} />
   </div>
 );
 

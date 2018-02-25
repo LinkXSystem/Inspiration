@@ -3,11 +3,13 @@ import { observable, action } from 'mobx';
 // Store
 import HomeStore from './home-store';
 import CodeStore from './code-store';
+import UserStore from './user-store';
 
 class RootStore {
   constructor() {
     this.home = new HomeStore(this);
     this.code = new CodeStore(this);
+    this.user = new UserStore(this);
   }
 
   @observable auth = undefined;

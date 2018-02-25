@@ -68,7 +68,7 @@ class Instance extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="project">
+      <div className="project-reader">
         <header>
           <div>
             <img src={data.owner.avatar_url} alt="" />

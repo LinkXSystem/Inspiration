@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 class Instance extends Component {
   constructor(props) {
@@ -7,8 +9,9 @@ class Instance extends Component {
   }
 
   render() {
+    const { name } = this.props;
     return (
-      <div className="user-thumbnail">
+      <div className={classnames(['user-thumbnail', name])}>
         <div
           style={{
             backgroundImage:
@@ -68,5 +71,13 @@ class Instance extends Component {
     );
   }
 }
+
+Instance.defaultProps = {
+  name: '',
+};
+
+Instance.propTypes = {
+  name: PropTypes.string,
+};
 
 export default Instance;

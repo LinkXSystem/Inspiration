@@ -7,12 +7,13 @@ import _ from 'lodash';
 import { observer } from 'mobx-react';
 import store from '../stores';
 
-import { Music } from '../views/universal/player';
 import Directive from '../views/universal/directive/directive';
 
+import { BookAdvert } from '../views/universal/billboard';
 import { ActionCarousel } from '../views/universal/carousel';
-import { BookAdvert } from '../views/universal/advert';
-import { Error, Input } from '../views/universal/element';
+import { Music } from '../views/universal/player';
+import { Error } from '../views/universal/element';
+import { Search } from '../views/universal/higher';
 import { DesignThumbnail } from '../views/universal/thumbnail';
 
 import { ArticleList, BookList, CodeList } from '../views/universal/group';
@@ -73,12 +74,7 @@ class Home extends Component {
           <Col md={3}>
             <Row>
               <Col sm={12}>
-                <Input
-                  change={dom => {
-                    console.log(dom);
-                  }}
-                  delay={2000}
-                />
+                <Search />
                 <Music />
                 <Directive />
               </Col>

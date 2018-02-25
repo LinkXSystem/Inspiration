@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 
-import './style.scss';
-
 class Instance extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      signin: {},
+      signup: {},
+    };
     this.signin = this.signin.bind(this);
     this.signup = this.signup.bind(this);
   }
 
   signin() {
-    const { modal, verify, signin, submit } = this.props;
+    const { modal, signin, submit } = this.props;
     return (
       <section className="auth-thumbnail">
         <header>
@@ -19,11 +21,31 @@ class Instance extends Component {
           <i className="fa fa-times" aria-hidden="true" onClick={modal} />
         </header>
         <form>
-          <input type="email" placeholder="邮箱" onChange={verify} />
-          <input type="password" placeholder="密码" />
+          <input
+            type="email"
+            placeholder="邮箱"
+            onChange={dom =>
+              this.setState({
+                signin: Object.assign(this.state.signin, {
+                  email: dom.target.value,
+                }),
+              })
+            }
+          />
+          <input
+            type="password"
+            placeholder="密码"
+            onChange={dom =>
+              this.setState({
+                signin: Object.assign(this.state.signin, {
+                  password: dom.target.value,
+                }),
+              })
+            }
+          />
           <button
             onClick={() => {
-              submit('xxx');
+              submit({ type: 'signin', data: this.state.signin });
             }}
           >
             登陆
@@ -57,7 +79,7 @@ class Instance extends Component {
   }
 
   signup() {
-    const { modal, verify, signup, submit } = this.props;
+    const { modal, signup, submit } = this.props;
     return (
       <section className="auth-thumbnail">
         <header>
@@ -65,12 +87,42 @@ class Instance extends Component {
           <i className="fa fa-times" aria-hidden="true" onClick={modal} />
         </header>
         <form>
-          <input type="email" placeholder="邮箱" onChange={verify} />
-          <input type="password" placeholder="密码" />
-          <input type="password" placeholder="重复密码" />
+          <input
+            type="email"
+            placeholder="邮箱"
+            onChange={dom =>
+              this.setState({
+                signin: Object.assign(this.state.signup, {
+                  email: dom.target.value,
+                }),
+              })
+            }
+          />
+          <input
+            type="password"
+            placeholder="密码"
+            onChange={dom =>
+              this.setState({
+                signin: Object.assign(this.state.signup, {
+                  password: dom.target.value,
+                }),
+              })
+            }
+          />
+          <input
+            type="password"
+            placeholder="重复密码"
+            onChange={dom =>
+              this.setState({
+                signin: Object.assign(this.state.signup, {
+                  verify: dom.target.value,
+                }),
+              })
+            }
+          />
           <button
             onClick={() => {
-              submit('xxx');
+              submit({ type: 'signin', data: this.state.signin });
             }}
           >
             注册
@@ -110,7 +162,6 @@ class Instance extends Component {
 Instance.propTypes = {
   state: Proptypes.string.isRequired,
   modal: Proptypes.func.isRequired,
-  verify: Proptypes.func.isRequired,
   signin: Proptypes.func.isRequired,
   signup: Proptypes.func.isRequired,
   submit: Proptypes.func.isRequired,

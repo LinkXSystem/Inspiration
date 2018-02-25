@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './advert.scss';
-
 const instance = ({ data }) => (
   <div className="book-advert">
     <div className="advert">

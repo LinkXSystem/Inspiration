@@ -3,7 +3,10 @@ import React from 'react';
 
 const element = ({ name, url }) => (
   <blockquote className="blockquote">
-    <a href={url}>{name}</a>{' '}
+    <span>{name}</span>
+    <a href={url}>
+      <i className="inspiration-more" aria-hidden="true" />
+    </a>
   </blockquote>
 );
 

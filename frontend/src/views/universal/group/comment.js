@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Comment } from '../element';
 
 class Instance extends Component {
   constructor(props) {
@@ -7,11 +8,10 @@ class Instance extends Component {
   }
 
   render() {
-    const { children } = this.props;
     return (
-      <div className="affix">
-        <i className="inspiration-add" aria-hidden="true" />
-        <div>{children}</div>
+      <div className="comment-list">
+        <Comment />
+        <Comment />
       </div>
     );
   }

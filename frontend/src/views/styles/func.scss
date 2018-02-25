@@ -12,3 +12,19 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+@mixin button {
+  margin-top: 0.75em;
+  text-align: center;
+  padding: 0.5em 1em;
+  border: 0px;
+  color: #ffffff;
+  border: 1px solid #0084ff;
+}
+
+@mixin line-clamp($number:3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}

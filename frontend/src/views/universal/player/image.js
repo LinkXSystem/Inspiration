@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './display.css';
-
 class Color extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +8,7 @@ class Color extends Component {
 
   render() {
     return (
-      <div className="color">
+      <div className="image-player">
         <div />
         <div />
       </div>

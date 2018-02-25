@@ -6,8 +6,8 @@ import { apollo } from '../mock';
 
 import { Blockquote, Error } from '../views/universal/element';
 import { BookList, EvaluateList } from '../views/universal/group';
-import { BookCarousel } from '../views/universal/carousel';
-import { BookAdvert } from '../views/universal/advert';
+// import { BookCarousel } from '../views/universal/carousel';
+// import { BookAdvert } from '../views/universal/advertisement';
 
 class Books extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Books extends Component {
         <Row>
           <Col md={9}>
             <Row>
-              <Col sm={12}>
+              {/* <Col sm={12}>
                 <BookCarousel time={10000}>
                   <BookAdvert
                     data={{
@@ -93,7 +93,7 @@ class Books extends Component {
                     }}
                   />
                 </BookCarousel>
-              </Col>
+              </Col> */}
               <Col sm={12}>
                 <Blockquote name="热门推荐" url="" />
                 {this.state.data.books ? (

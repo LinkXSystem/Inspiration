@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Input } from '../element';
+
 class Instance extends Component {
   constructor(props) {
     super(props);
@@ -7,11 +9,12 @@ class Instance extends Component {
   }
 
   render() {
-    const { children } = this.props;
     return (
-      <div className="affix">
-        <i className="inspiration-add" aria-hidden="true" />
-        <div>{children}</div>
+      <div className="search">
+        <div>
+          <Input placeholder="搜索" change={() => {}} />
+          <i className="inspiration-search" aria-hidden="true" />
+        </div>
       </div>
     );
   }

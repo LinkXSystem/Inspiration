@@ -1,8 +1,13 @@
+import Affix from './affix';
 import Assiant from './assiant';
 import Drag from './drag';
 import Load from './load';
+import Flat from './flat';
 import List from './list';
-import Modal from './modal';
 import Markdown from './markdown';
+import Modal from './modal';
+import Search from './search';
 
-export { Assiant, Drag, Load, List, Modal, Markdown };
+import './styles.scss';
+
+export { Affix, Assiant, Drag, Load, Flat, List, Modal, Markdown, Search };

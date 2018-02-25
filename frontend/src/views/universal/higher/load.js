@@ -12,11 +12,14 @@ class Instance extends Component {
   }
 
   darw() {
-    const { width, height } = window.getComputedStyle(this.element);
-
     const canvas = this.element;
-    canvas.width = parseInt(width, 10);
-    canvas.height = parseInt(height, 10);
+
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+
+    Object.assign(canvas.style, {
+      backgroundColor: '#ffffff',
+    });
 
     const context = canvas.getContext('2d');
 
@@ -59,8 +62,8 @@ class Instance extends Component {
         line.addColorStop(
           0.2 * i,
           `rgb(
-            ${Math.floor(Math.random() * 255)}, 
-            ${Math.floor(Math.random() * 255)}, 
+            ${Math.floor(Math.random() * 255)},
+            ${Math.floor(Math.random() * 255)},
             ${Math.floor(Math.random() * 255)})`,
         );
       }
@@ -106,7 +109,6 @@ class Instance extends Component {
     const { width, height } = this.props;
     return (
       <canvas
-        className="t-container"
         style={{
           height: height,
           width: width,

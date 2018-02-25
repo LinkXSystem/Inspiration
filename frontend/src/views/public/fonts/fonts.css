@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'linksystem';
-  src: url('linksystem.eot?xwaz3x');
-  src: url('linksystem.eot?xwaz3x#iefix') format('embedded-opentype'),
-    url('linksystem.ttf?xwaz3x') format('truetype'),
-    url('linksystem.woff?xwaz3x') format('woff'),
-    url('linksystem.svg?xwaz3x#linksystem') format('svg');
+  src: url('linksystem.eot?u0prpu');
+  src: url('linksystem.eot?u0prpu#iefix') format('embedded-opentype'),
+    url('linksystem.ttf?u0prpu') format('truetype'),
+    url('linksystem.woff?u0prpu') format('woff'),
+    url('linksystem.svg?u0prpu#linksystem') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,6 +25,52 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.inspiration-fork:before {
+  content: '\e918';
+}
+.inspiration-star:before {
+  content: '\e919';
+}
+.inspiration-mail:before {
+  content: '\e91d';
+}
+.inspiration-message:before {
+  content: '\e91e';
+}
+.inspiration-tip:before {
+  content: '\e91f';
+}
+.inspiration-search:before {
+  content: '\e91c';
+}
+.inspiration-time:before {
+  content: '\e91b';
+}
+.inspiration-qr-code:before {
+  content: '\e911';
+}
+.inspiration-refrush:before {
+  content: '\e912';
+}
+.inspiration-catalog:before {
+  content: '\e913';
+  color: #555;
+}
+.inspiration-back:before {
+  content: '\e914';
+}
+.inspiration-more:before {
+  content: '\e915';
+}
+.inspiration-right:before {
+  content: '\e916';
+}
+.inspiration-terminal:before {
+  content: '\e917';
+}
+.inspiration-add:before {
+  content: '\e91a';
+}
 .inspiration-heart:before {
   content: '\e90e';
 }

@@ -1,7 +1,7 @@
 import AuthThumbnail from './auth';
 import BookThumbnail from './book/book';
 import UserThumbnail from './user';
-import DesignThumbnail from './design/design';
+import DesignThumbnail from './design';
 
 import './style.scss';
 

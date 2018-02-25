@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import { Metadata, Markdown } from '../views/universal/editor';
+import { Metadata, MarkdownEditor } from '../views/universal/editor';
 
 class Writer extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Writer extends Component {
                 <Metadata />
               </Col>
               <Col sm={12}>
-                <Markdown />
+                <MarkdownEditor />
               </Col>
             </Row>
           </Col>
