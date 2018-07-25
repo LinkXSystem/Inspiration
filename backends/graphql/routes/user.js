@@ -8,7 +8,7 @@ const confuse = require('../components/utils/confuse');
 
 const mongo = require('../components/mongo');
 
-router.post('/login', async (req, res, next) => {
+router.post('/signin', async (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
 
@@ -34,7 +34,7 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
-router.post('/registry', async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;

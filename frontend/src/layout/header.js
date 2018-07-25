@@ -42,9 +42,7 @@ class Header extends Component {
             {/* <NavItem eventKey={1} href="/user" className="user">
               <img src={require('../../public/imgs/user.png')} alt="用户" />
             </NavItem> */}
-            <NavItem eventKey={1}>
-              <Auth />
-            </NavItem>
+            <Auth />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

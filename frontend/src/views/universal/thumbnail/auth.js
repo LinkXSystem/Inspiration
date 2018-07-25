@@ -88,11 +88,22 @@ class Instance extends Component {
         </header>
         <form>
           <input
+            type="text"
+            placeholder="昵称"
+            onChange={dom =>
+              this.setState({
+                signup: Object.assign(this.state.signup, {
+                  username: dom.target.value,
+                }),
+              })
+            }
+          />
+          <input
             type="email"
             placeholder="邮箱"
             onChange={dom =>
               this.setState({
-                signin: Object.assign(this.state.signup, {
+                signup: Object.assign(this.state.signup, {
                   email: dom.target.value,
                 }),
               })
@@ -103,19 +114,8 @@ class Instance extends Component {
             placeholder="密码"
             onChange={dom =>
               this.setState({
-                signin: Object.assign(this.state.signup, {
+                signup: Object.assign(this.state.signup, {
                   password: dom.target.value,
-                }),
-              })
-            }
-          />
-          <input
-            type="password"
-            placeholder="重复密码"
-            onChange={dom =>
-              this.setState({
-                signin: Object.assign(this.state.signup, {
-                  verify: dom.target.value,
                 }),
               })
             }

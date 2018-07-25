@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-// import store from '../stores';
+import store from '../stores';
 import { Modal } from '../views/universal/higher';
 import { AuthThumbnail } from '../views/universal/thumbnail';
 
@@ -40,14 +40,27 @@ class Auth extends Component {
   //   }
   // }
 
-  submit(data) {
-    console.log(data);
+  submit(info) {
+    const { type } = info;
+    const { user } = store;
+
+    if (type === 'signin') {
+      user.signin(info.data);
+    } else {
+      user.signup(info.data);
+    }
   }
 
   render() {
     const { display, state } = this.state;
     return (
-      <div>
+      <div
+        style={{
+          'line-height': '20px',
+          color: '#777',
+          padding: '15px 15px',
+        }}
+      >
         <ul className="ul">
           <li onClick={() => this.modal('signin')}>登录</li>
           <li

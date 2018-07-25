@@ -34,12 +34,8 @@ const grant = async (url, head, field) => {
   return res.headers[field];
 };
 
-const build = async () => {
-  const instance = usual('http://localhost:8080');
-
-  await grant();
-
-  const token = sessionStorage.getItem('x-auth-token');
+const build = async token => {
+  const instance = usual('http://localhost:2017');
 
   instance.interceptors.request.use(
     config =>

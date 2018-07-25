@@ -27,7 +27,7 @@ class HomeStore {
   };
 
   mock(auth) {
-    const client = apollo.build('http://localhost:8080/home', {
+    const client = apollo.build('http://localhost:2017/home', {
       'x-auth-token': auth,
     });
 
