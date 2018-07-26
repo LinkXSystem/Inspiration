@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const mongo = require('../src/components/mongoose');
-const utils = require('../src/utils/error');
-const redis = require('../src/components/redis');
+const mongo = require('../components/mongo');
+const redis = require('../components/redis');
+
+const utils = require('../components/utils/error');
 
 router.head('/', async (req, res, next) => {
   const access = req.headers.access;

@@ -11,3 +11,24 @@ git checkout origin/deplay
 
 * frontend：前端的 Dockerfile 构建文件存储文件夹
 * jenkins：jenkins 的 CI/CD 脚本
+* backends: 基础设施的 Dockerfile 和 服务器的 Dockerfile
+
+> jenkinks 部署
+
+```
+mkdir /jenkins/
+
+docker run -d  \
+  --restart=always \
+  --rm -u root \
+  -p 8080:8080 \
+  -v /jenkins/jenkins_home:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /jenkins/:/home \
+  jenkinsci/blueocean
+```
+
+> jenkins 说明
+
+* 对于每个远程分支来说，Jenkinsfile 是不一样的
+* 对于 master 而言， 部署的流程还未能确定 
